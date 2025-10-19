@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeProgress();
     initializeLessons();
     initializeGoTopButton();
-    initializeBibleVerses();
+    initializeBibleVersesWithOverlay(); // Usar a versão corrigida para mobile
 });
 
 // Menu Hamburger
@@ -220,7 +220,7 @@ function loadLesson(lessonNum) {
     }
     
     // Reinicializar os versículos para a nova lição
-    initializeBibleVerses();
+    initializeBibleVersesWithOverlay();
 }
 
 function closeLesson() {
@@ -267,53 +267,218 @@ function initializeGoTopButton() {
     });
 }
 
-// Sistema de Versículos Bíblicos Interativos
-function initializeBibleVerses() {
+// Adicionar estilos mobile dinamicamente
+function addMobileStyles() {
+    if (!document.getElementById('mobile-bible-styles')) {
+        const mobileStyles = `
+            /* Estilos para tooltip no mobile */
+            .bible-tooltip.show {
+                position: fixed !important;
+                left: 50% !important;
+                top: 50% !important;
+                transform: translate(-50%, -50%) !important;
+                z-index: 10000 !important;
+                max-width: 90vw !important;
+                max-height: 80vh !important;
+                overflow: auto !important;
+                background: white !important;
+                border: 2px solid #2c3e50 !important;
+                box-shadow: 0 4px 20px rgba(0,0,0,0.3) !important;
+                padding: 20px !important;
+                border-radius: 10px !important;
+                color: #333 !important;
+                font-family: Arial, sans-serif !important;
+            }
+
+            .bible-tooltip .verse-ref {
+                font-weight: bold !important;
+                font-size: 18px !important;
+                color: #2c3e50 !important;
+                margin-bottom: 15px !important;
+                text-align: center !important;
+                border-bottom: 1px solid #eee !important;
+                padding-bottom: 10px !important;
+            }
+
+            .bible-tooltip .verse-text {
+                font-size: 16px !important;
+                line-height: 1.6 !important;
+                color: #333 !important;
+                margin: 15px 0 !important;
+                text-align: left !important;
+            }
+
+            .bible-tooltip .version {
+                font-size: 14px !important;
+                color: #666 !important;
+                text-align: center !important;
+                margin-top: 15px !important;
+                font-style: italic !important;
+            }
+
+            /* Overlay para tooltip no mobile */
+            .bible-tooltip-overlay {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0,0,0,0.7);
+                z-index: 9999;
+                display: none;
+            }
+
+            .bible-tooltip-overlay.active {
+                display: block;
+            }
+
+            /* Botão de fechar no mobile */
+            .close-tooltip {
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                cursor: pointer;
+                font-weight: bold;
+                color: #666;
+                font-size: 20px;
+                width: 30px;
+                height: 30px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+                background: #f8f9fa;
+                border: 1px solid #ddd;
+                z-index: 10001;
+            }
+
+            .close-tooltip:hover {
+                background: #e9ecef;
+                color: #333;
+            }
+
+            /* Melhorar visibilidade dos versículos no mobile */
+            .bible-verse, .verse-ref {
+                cursor: pointer;
+                padding: 2px 4px;
+                border-radius: 3px;
+                transition: background-color 0.2s;
+                color: #2c3e50;
+                font-weight: bold;
+            }
+
+            .bible-verse:hover, .verse-ref:hover {
+                background-color: #e8f4fd;
+            }
+
+            @media (max-width: 768px) {
+                .bible-verse, .verse-ref {
+                    padding: 4px 6px;
+                    background-color: #f8f9fa;
+                    border-radius: 4px;
+                }
+            }
+        `;
+        
+        const styleElement = document.createElement('style');
+        styleElement.id = 'mobile-bible-styles';
+        styleElement.textContent = mobileStyles;
+        document.head.appendChild(styleElement);
+    }
+}
+
+// Sistema de Versículos Bíblicos Interativos - CORRIGIDO PARA MOBILE
+function initializeBibleVersesWithOverlay() {
+    addMobileStyles();
+    
+    // Criar overlay se não existir
+    if (!document.getElementById('bibleTooltipOverlay')) {
+        const overlay = document.createElement('div');
+        overlay.id = 'bibleTooltipOverlay';
+        overlay.className = 'bible-tooltip-overlay';
+        document.body.appendChild(overlay);
+    }
+    
     const tooltip = document.getElementById('bibleTooltip');
+    const overlay = document.getElementById('bibleTooltipOverlay');
+    
     if (!tooltip) return;
     
     let touchTimer;
     let currentVerse = null;
+    let isTouchDeviceFlag = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+    
+    // Garantir que o tooltip tenha os estilos básicos
+    tooltip.style.display = 'none';
+    tooltip.style.position = 'absolute';
+    tooltip.style.background = 'white';
+    tooltip.style.border = '1px solid #ccc';
+    tooltip.style.padding = '10px';
+    tooltip.style.borderRadius = '5px';
+    tooltip.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+    tooltip.style.zIndex = '1000';
+    tooltip.style.maxWidth = '300px';
+    tooltip.style.color = '#333';
+    tooltip.style.fontFamily = 'Arial, sans-serif';
     
     // Versículos com classe bible-verse
     const bibleVerses = document.querySelectorAll('.bible-verse, .verse-ref');
     
+    // Limpar event listeners antigos
     bibleVerses.forEach(verse => {
-        // Eventos para mouse
+        // Remover listeners antigos
+        const newVerse = verse.cloneNode(true);
+        verse.parentNode.replaceChild(newVerse, verse);
+    });
+
+    // Re-selecionar os versículos após o clone
+    const refreshedBibleVerses = document.querySelectorAll('.bible-verse, .verse-ref');
+    
+    refreshedBibleVerses.forEach(verse => {
+        // Adicionar novos event listeners
         verse.addEventListener('mouseenter', handleVerseHover);
         verse.addEventListener('mouseleave', handleVerseLeave);
-        
-        // Eventos para touch
         verse.addEventListener('touchstart', handleVerseTouchStart);
         verse.addEventListener('touchend', handleVerseTouchEnd);
         verse.addEventListener('touchcancel', handleVerseTouchCancel);
-        
-        // Clique para dispositivos com mouse
         verse.addEventListener('click', handleVerseClick);
     });
     
     function handleVerseHover(e) {
-        if (isTouchDevice()) return;
+        if (isTouchDeviceFlag) return;
         showVerseTooltip(e.target, e.clientX, e.clientY);
     }
     
     function handleVerseLeave() {
-        if (isTouchDevice()) return;
+        if (isTouchDeviceFlag) return;
         hideVerseTooltip();
     }
     
     function handleVerseTouchStart(e) {
+        e.preventDefault();
         currentVerse = e.target;
+        
+        // Limpar timer anterior se existir
+        clearTimeout(touchTimer);
+        
         touchTimer = setTimeout(() => {
             const touch = e.touches[0];
             showVerseTooltip(currentVerse, touch.clientX, touch.clientY);
-        }, 500); // 500ms de hold
+        }, 400);
     }
     
-    function handleVerseTouchEnd() {
+    function handleVerseTouchEnd(e) {
+        e.preventDefault();
         clearTimeout(touchTimer);
-        // Pequeno delay para permitir clique
-        setTimeout(hideVerseTooltip, 100);
+        
+        // No mobile, mostrar tooltip no toque rápido também
+        if (!tooltip.classList.contains('show')) {
+            const touch = e.changedTouches[0];
+            showVerseTooltip(currentVerse, touch.clientX, touch.clientY);
+        } else {
+            // Se já está mostrando, esconder no segundo toque
+            hideVerseTooltip();
+        }
     }
     
     function handleVerseTouchCancel() {
@@ -322,51 +487,111 @@ function initializeBibleVerses() {
     }
     
     function handleVerseClick(e) {
-        if (!isTouchDevice()) {
-            // Para desktop, mostrar tooltip no clique também
+        if (!isTouchDeviceFlag) {
+            e.preventDefault();
             showVerseTooltip(e.target, e.clientX, e.clientY);
-            
-            // Auto-esconder após 5 segundos
             setTimeout(hideVerseTooltip, 5000);
         }
     }
     
     function showVerseTooltip(element, x, y) {
-        const reference = element.dataset.ref || element.textContent;
+        const reference = element.dataset.ref || element.textContent.trim();
         const verseText = getBibleVerse(reference);
+        
+        if (!verseText) {
+            console.log('Versículo não encontrado:', reference);
+            return;
+        }
+        
         const bookInfo = getBookInfo(reference.split('.')[0]);
         
         tooltip.innerHTML = `
-            <div class="verse-ref">${reference}</div>
+            <div class="close-tooltip" onclick="hideVerseTooltip()">✕</div>
+            <div class="verse-ref"><strong>${reference}</strong></div>
             <div class="verse-text">${verseText}</div>
             <div class="version">${bookInfo.name} - ACF</div>
         `;
         
-        // Posicionar tooltip
-        const rect = tooltip.getBoundingClientRect();
-        let posX = x + 10;
-        let posY = y + 10;
-        
-        // Ajustar se sair da tela
-        if (posX + rect.width > window.innerWidth) {
-            posX = x - rect.width - 10;
+        if (isTouchDeviceFlag) {
+            // Para mobile - centralizar com overlay
+            tooltip.style.position = 'fixed';
+            tooltip.style.left = '50%';
+            tooltip.style.top = '50%';
+            tooltip.style.transform = 'translate(-50%, -50%)';
+            tooltip.style.zIndex = '10000';
+            tooltip.style.maxWidth = '90vw';
+            tooltip.style.maxHeight = '80vh';
+            tooltip.style.overflow = 'auto';
+            tooltip.style.padding = '20px';
+            tooltip.style.background = 'white';
+            tooltip.style.border = '2px solid #2c3e50';
+            tooltip.style.borderRadius = '10px';
+            tooltip.style.boxShadow = '0 4px 20px rgba(0,0,0,0.3)';
+            tooltip.style.color = '#333';
+            tooltip.style.fontFamily = 'Arial, sans-serif';
+            
+            // Mostrar overlay
+            overlay.classList.add('active');
+        } else {
+            // Para desktop - posicionar próximo ao mouse
+            tooltip.style.position = 'absolute';
+            const rect = tooltip.getBoundingClientRect();
+            let posX = x + 10;
+            let posY = y + 10;
+            
+            // Ajustar se sair da tela
+            if (posX + rect.width > window.innerWidth) {
+                posX = x - rect.width - 10;
+            }
+            if (posY + rect.height > window.innerHeight) {
+                posY = y - rect.height - 10;
+            }
+            
+            tooltip.style.left = posX + 'px';
+            tooltip.style.top = posY + 'px';
+            tooltip.style.transform = 'none';
+            tooltip.style.zIndex = '1000';
         }
-        if (posY + rect.height > window.innerHeight) {
-            posY = y - rect.height - 10;
-        }
         
-        tooltip.style.left = posX + 'px';
-        tooltip.style.top = posY + 'px';
+        tooltip.style.display = 'block';
         tooltip.classList.add('show');
+        
+        // Adicionar evento para fechar tooltip ao clicar fora (mobile)
+        if (isTouchDeviceFlag) {
+            setTimeout(() => {
+                document.addEventListener('click', closeTooltipOnClickOutside, true);
+            }, 100);
+        }
+    }
+    
+    function closeTooltipOnClickOutside(e) {
+        if (tooltip && !tooltip.contains(e.target) && !e.target.classList.contains('bible-verse') && !e.target.classList.contains('verse-ref')) {
+            hideVerseTooltip();
+            document.removeEventListener('click', closeTooltipOnClickOutside, true);
+        }
     }
     
     function hideVerseTooltip() {
-        tooltip.classList.remove('show');
+        if (tooltip) {
+            tooltip.style.display = 'none';
+            tooltip.classList.remove('show');
+        }
+        if (overlay) {
+            overlay.classList.remove('active');
+        }
+        document.removeEventListener('click', closeTooltipOnClickOutside, true);
     }
     
-    function isTouchDevice() {
-        return 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-    }
+    // Fechar tooltip ao clicar no overlay
+    overlay.addEventListener('click', hideVerseTooltip);
+    
+    // Também adicionar função global para ser chamada de outros lugares
+    window.hideVerseTooltip = hideVerseTooltip;
+}
+
+// Função auxiliar para verificar se é dispositivo touch
+function isTouchDevice() {
+    return 'ontouchstart' in window || navigator.maxTouchPoints > 0;
 }
 
 // Funções de navegação
@@ -384,7 +609,7 @@ function navigateTo(url) {
 }
 
 function showBibleReferences() {
-    alert('Sistema de Referências Bíblicas:\n\n• Passe o mouse sobre qualquer versículo para ver o texto\n• Em dispositivos touch, segure o versículo\n• Clique para manter o tooltip visível\n\nTotal de referências disponíveis: ' + Object.keys(bibleVerses).length);
+    alert('Sistema de Referências Bíblicas:\n\n• Passe o mouse sobre qualquer versículo para ver o texto\n• Em dispositivos touch, toque no versículo\n• Toque novamente para fechar\n\nTotal de referências disponíveis: ' + Object.keys(bibleVerses).length);
 }
 
 function showDiagrams() {
@@ -442,4 +667,9 @@ function getLessonData(lessonNum) {
         duration: "Em breve",
         content: `<p>O conteúdo desta lição está sendo preparado e estará disponível em breve.</p>`
     };
+}
+
+// Manter a função original para compatibilidade
+function initializeBibleVerses() {
+    initializeBibleVersesWithOverlay();
 }
