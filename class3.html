@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classe III - Apostila de Batismo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .faith-diagram {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .faith-item {
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            width: 80%;
+        }
+        .fact-item {
+            background: #d4edda;
+            border: 2px solid #28a745;
+        }
+        .faith-item {
+            background: #e8f4fd;
+            border: 2px solid #007bff;
+        }
+        .feelings-item {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+        }
+        .body-analogy {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin: 20px 0;
+        }
+        .body-part {
+            margin: 15px 0;
+            padding: 10px;
+            border-left: 4px solid #007bff;
+            background: #f8f9fa;
+        }
+        .sanctification-stages {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .stage-card {
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .stage-instant {
+            background: #d4edda;
+            border: 2px solid #28a745;
+        }
+        .stage-progressive {
+            background: #e8f4fd;
+            border: 2px solid #007bff;
+        }
+        .stage-final {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+        }
+    </style>
+</head>
+<body>
+    <!-- Menu Hamburger -->
+    <div class="hamburger-menu">
+        <div class="hamburger-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav class="sidebar-nav">
+            <div class="sidebar-header">
+                <h3>Navegação</h3>
+                <div class="close-sidebar">&times;</div>
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="index.html" class="nav-home"><i class="fas fa-home"></i> Página Inicial</a></li>
+                <li class="menu-divider">Classes</li>
+                <li><a href="class1.html"><i class="fas fa-book"></i> Classe I</a></li>
+                <li><a href="class2.html"><i class="fas fa-book"></i> Classe II</a></li>
+                <li><a href="class3.html" class="active"><i class="fas fa-book"></i> Classe III</a></li>
+                <li><a href="class4.html"><i class="fas fa-book"></i> Classe IV</a></li>
+                <li class="menu-divider">Ações</li>
+                <li><a href="#" onclick="window.print()"><i class="fas fa-print"></i> Imprimir</a></li>
+                <li><a href="class2.html"><i class="fas fa-arrow-left"></i> Voltar</a></li>
+            </ul>
+            <div class="sidebar-footer">
+                <p>Igreja Evangélica<br>Assembleia de Deus<br>da Baixa - Ndlavela</p>
+            </div>
+        </nav>
+    </div>
+
+    <header>
+        <div class="header-content">
+            <button class="print-btn" onclick="window.print()">
+                <i class="fas fa-print"></i> Imprimir
+            </button>
+            <div class="church-info">
+                <h1>Classe III - Doutrinas Bíblicas</h1>
+                <div class="subtitle">4 Lições sobre as Doutrinas Essenciais</div>
+            </div>
+            <a href="class2.html" class="back-btn">
+                <i class="fas fa-arrow-left"></i> Classe Anterior
+            </a>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Lição 10 (Já existe) -->
+        <section class="lesson-section active" id="lesson10">
+            <div class="lesson-header">
+                <h2><i class="fas fa-dove"></i> Lição 10: O Espírito Santo - Batismo e Dons</h2>
+                <div class="lesson-meta">
+                    <span class="bible-refs"><i class="fas fa-bible"></i> 15 referências</span>
+                    <span class="duration"><i class="far fa-clock"></i> 45 min</span>
+                </div>
+            </div>
+
+            <div class="lesson-content">
+                <div class="lesson-part">
+                    <h3>REVISÃO DA CLASSE II</h3>
+                    <div class="review-list">
+                        <p>1 - <strong>Como vencer a tentação</strong> - Sujeitar a Deus, exame, palavra e oração.</p>
+                        <p>2 - <strong>A vontade de Deus</strong> - É o Seu desejo realizado na terra através dos crentes - <span class="bible-verse" data-ref="At. 5:12">At. 5:12</span></p>
+                        <p>3 - <strong>Testemunho</strong> - Cheio de Espírito conhecedor da palavra, compaixão, boa testemunha.</p>
+                        <p>4 - <strong>Discipulado</strong> - Estar completamente submisso <span class="bible-verse" data-ref="Hb. 13:17">Hb. 13:17</span>, <span class="bible-verse" data-ref="Mt. 8:7,9">Mt. 8:7,9</span></p>
+                        <p>5 - <strong>O Espírito Santo, fruto</strong> - Saber os frutos de cor</p>
+                    </div>
+                </div>
+
+                <div class="lesson-part">
+                    <h3>1. O BATISMO NO ESPIRITO SANTO</h3>
+                    <div class="bible-list">
+                        <p><strong>a)</strong> Para os salvos - Os que estavam no cenáculo - <span class="bible-verse" data-ref="At. 1:13-14">At. 1:13-14</span> / <span class="bible-verse" data-ref="At. 2:1,34">At. 2:1,34</span></p>
+                        <p><strong>b)</strong> Para os que crêem - <span class="bible-verse" data-ref="At. 19:2">At. 19:2</span></p>
+                        <p><strong>c)</strong> Para os que pedem - <span class="bible-verse" data-ref="Lc. 11:13">Lc. 11:13</span></p>
+                        <p><strong>d)</strong> Para os que esperam e perseveram - <span class="bible-verse" data-ref="Lc. 24:49">Lc. 24:49</span></p>
+                    </div>
+
+                    <div class="sub-point">
+                        <h4>1.1. Concede poder aos que recebem</h4>
+                        <p><span class="bible-verse" data-ref="At. 4:7-8">At. 4:7-8</span> / <span class="bible-verse" data-ref="At. 1:8">At. 1:8</span></p>
+                    </div>
+
+                    <div class="sub-point">
+                        <h4>1.2. Sua evidência - Falar em línguas</h4>
+                        <p><span class="bible-verse" data-ref="At. 2:4">At. 2:4</span> / <span class="bible-verse" data-ref="At. 10:46">At. 10:46</span> / <span class="bible-verse" data-ref="At. 19:6">At. 19:6</span></p>
+                    </div>
+                </div>
+
+                <div class="lesson-part">
+                    <h3>2. OS DONS DO ESPIRITO SANTO</h3>
+                    <div class="bible-list">
+                        <p><strong>a)</strong> Dados para o que foi útil - <span class="bible-verse" data-ref="ICo. 12:7">ICo. 12:7</span></p>
+                        <p><strong>b)</strong> Conforme o Espírito quer - <span class="bible-verse" data-ref="ICo. 12:8,10">ICo. 12:8,10</span></p>
+                        <p><strong>c)</strong> Devem ser buscados - <span class="bible-verse" data-ref="ICo. 12:31">ICo. 12:31</span></p>
+                        <p><strong>d)</strong> Não se compram - <span class="bible-verse" data-ref="At. 8:20">At. 8:20</span></p>
+                    </div>
+
+                    <div class="sub-point">
+                        <h4>2.1 Os dons são do Espírito, não pertencem ao crente.</h4>
+                        <p><span class="bible-verse" data-ref="ICo. 12:11">ICo. 12:11</span></p>
+                    </div>
+
+                    <h4>Dividem-se em:</h4>
+                    <div class="gifts-grid">
+                        <div class="gift-category">
+                            <div class="category-title">Dons de Poder</div>
+                            <div class="gift-list">
+                                <p>• Fé</p>
+                                <p>• Cura</p>
+                                <p>• Maravilhas</p>
+                            </div>
+                            <div class="bible-ref"><span class="bible-verse" data-ref="ICo. 12:9-10">ICo. 12:9-10</span></div>
+                        </div>
+                        <div class="gift-category">
+                            <div class="category-title">Dons de Inspiração</div>
+                            <div class="gift-list">
+                                <p>• Profecia</p>
+                                <p>• Línguas</p>
+                                <p>• Interpretação</p>
+                            </div>
+                            <div class="bible-ref"><span class="bible-verse" data-ref="ICo. 12:8,10">ICo. 12:8,10</span></div>
+                        </div>
+                        <div class="gift-category">
+                            <div class="category-title">Dons de Revelação</div>
+                            <div class="gift-list">
+                                <p>• Sabedoria</p>
+                                <p>• Ciência</p>
+                                <p>• Discernimento</p>
+                            </div>
+                            <div class="bible-ref"><span class="bible-verse" data-ref="ICo. 12:8,10">ICo. 12:8,10</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-part">
+                    <h3>3 - São para:</h3>
+                    <div class="bible-list">
+                        <p><strong>a)</strong> Glorificar a cristo - <span class="bible-verse" data-ref="Jo. 16:14">Jo. 16:14</span></p>
+                        <p><strong>b)</strong> Promover edificação - <span class="bible-verse" data-ref="ICo. 14:3,2,26">ICo. 14:3,2,26</span></p>
+                        <p><strong>c)</strong> Capacitar a Igreja - <span class="bible-verse" data-ref="Mc. 16:20">Mc. 16:20</span> / <span class="bible-verse" data-ref="Rm. 15:19,29">Rm. 15:19,29</span></p>
+                    </div>
+                </div>
+
+                <div class="lesson-actions">
+                    <button class="btn btn-secondary" onclick="markLessonCompleted(10)">
+                        <i class="fas fa-check"></i> Marcar como Concluída
+                    </button>
+                    <button class="btn btn-primary" onclick="loadLesson(11)">
+                        Próxima Lição <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lição 11 - NOVA -->
+        <section class="lesson-section" id="lesson11">
+            <div class="lesson-header">
+                <h2><i class="fas fa-scale-balanced"></i> Lição 11: Factos, Não Sentimentos</h2>
+                <div class="lesson-meta">
+                    <span class="bible-refs"><i class="fas fa-bible"></i> 15 referências</span>
+                    <span class="duration"><i class="far fa-clock"></i> 30 min</span>
+                </div>
+            </div>
+
+            <div class="lesson-content">
+                <div class="lesson-part">
+                    <h3>1. O crente vive pela fé e não pela vista</h3>
+                    <p><span class="bible-verse" data-ref="IICo. 5:7">IICo. 5:7</span></p>
+                </div>
+
+                <div class="lesson-part">
+                    <h3>2. O fundamento do crente é a palavra "DEUS diz"</h3>
+                    <p><span class="bible-verse" data-ref="IITm. 3:14-16">IITm. 3:14-16</span></p>
+                </div>
+
+                <div class="lesson-part">
+                    <h3>3. Emoções na caminhada da Fé</h3>
+                    <p>Emoções poderão surgir na caminhada da Fé, mas não devemos ser guiados por elas.</p>
+                    <p><span class="bible-verse" data-ref="At. 8:9-13">At. 8:9-13</span>, <span class="bible-verse" data-ref="At. 8:18-19">18,19</span></p>
+                </div>
+
+                <div class="lesson-part">
+                    <h3>4. Tudo o que não é por Fé é pecado</h3>
+                    <p><span class="bible-verse" data-ref="Rm. 14:23">Rm. 14:23</span> / <span class="bible-verse" data-ref="Hb. 10:38">Hb. 10:38</span></p>
+                    <p><em>(refere-se aquilo que fazemos que não glorifica a Deus)</em></p>
+                </div>
+
+                <div class="lesson-part">
+                    <h3>5. Alguns sentimentos que vem na vida do crente:</h3>
+                    <div class="bible-list">
+                        <p><strong>a)</strong> Incerteza da salvação - <span class="bible-verse" data-ref="Hb. 10:22-23">Hb. 10:22-23</span>, <span class="bible-verse" data-ref="Hb. 10:38-39">38,39</span></p>
+                        <p><strong>b)</strong> Duvidas sobre a presença de Deus - <span class="bible-verse" data-ref="Mt. 28:20">Mt. 28:20</span> / <span class="bible-verse" data-ref="Sl. 9:10">Sl. 9:10</span> / <span class="bible-verse" data-ref="IJo. 3:24">IJo. 3:24</span></p>
+                        <p><strong>c)</strong> Incerteza sobre o perdão dos pecados - <span class="bible-verse" data-ref="Is. 43:25">Is. 43:25</span></p>
+                        <p><strong>d)</strong> Incerteza de vencer - <span class="bible-verse" data-ref="IJo. 4:4">IJo. 4:4</span> / <span class="bible-verse" data-ref="IJo. 2:13">IJo. 2:13</span> / <span class="bible-verse" data-ref="ICo. 15:57">ICo. 15:57</span></p>
+                    </div>
+                </div>
+
+                <div class="lesson-part">
+                    <h3>6. A fidelidade das promessas de Deus</h3>
+                    <p>Quando tudo falha as promessas de Deus continuam de pé - 
+                       <span class="bible-verse" data-ref="Js. 23:14">Js. 23:14</span> / 
+                       <span class="bible-verse" data-ref="Is. 28:16">Is. 28:16</span> / 
+                       <span class="bible-verse" data-ref="IPd. 2:6">IPd. 2:6</span></p>
+                </div>
+
+                <div class="lesson-part">
+                    <h3>7. Confiar na Palavra acima dos sentimentos</h3>
+                    <p>O nosso coração (alma) é por vezes enganoso, devemos, portanto, quando não sentimos nada, crer na Palavra de Deus e confiar nela.</p>
+                    <p><span class="bible-verse" data-ref="Jr. 17:9">Jr. 17:9</span> / <span class="bible-verse" data-ref="IPd. 5:7">IPd. 5:7</span></p>
+                </div>
+
+                <!-- Diagrama Factos vs Sentimentos -->
+                <div class="bible-diagram">
+                    <div class="diagram-title">Factos vs Sentimentos</div>
+                    <div class="faith-diagram">
+                        <div class="faith-item fact-item">
+                            <strong>FACTO</strong>
+                            <div>É o Deus prometeu, o que diz a sua Palavra</div>
+                            <div class="verse-ref">Verdade e real</div>
+                        </div>
+                        <div class="flow-arrow">↓</div>
+                        <div class="faith-item faith-item">
+                            <strong>FÉ</strong>
+                            <div>Depositar nossa confiança nos factos</div>
+                            <div class="verse-ref">Vive pela Fé</div>
+                        </div>
+                        <div class="flow-arrow">↓</div>
+                        <div class="faith-item feelings-item">
+                            <strong>SENTIMENTOS E EMOÇÕES</strong>
+                            <div>Muitas vezes não são reais</div>
+                            <div class="verse-ref">Não devem guiar</div>
+                        </div>
+                    </div>
+                    <div class="diagram-note">
+                        <p><strong>É bom nos emocionarmos controladamente por factos reais</strong></p>
+                    </div>
+                </div>
+
+                <div class="lesson-actions">
+                    <button class="btn btn-secondary" onclick="loadLesson(10)">
+                        <i class="fas fa-arrow-left"></i> Lição Anterior
+                    </button>
+                    <button class="btn btn-secondary" onclick="markLessonCompleted(11)">
+                        <i class="fas fa-check"></i> Marcar como Concluída
+                    </button>
+                    <button class="btn btn-primary" onclick="loadLesson(12)">
+                        Próxima Lição <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lição 12 - NOVA -->
+        <section class="lesson-section" id="lesson12">
+            <div class="lesson-header">
+                <h2><i class="fas fa-people-group"></i> Lição 12: Consciência do Corpo</h2>
+                <div class="lesson-meta">
+                    <span class="bible-refs"><i class="fas fa-bible"></i> 10 referências</span>
+                    <span class="duration"><i class="far fa-clock"></i> 35 min</span>
+                </div>
+            </div>
+
+            <div class="lesson-content">
+                <div class="lesson-part">
+                    <h3>1. Somos o corpo de Cristo</h3>
+                    <p><span class="bible-verse" data-ref="Rm. 12:5">Rm. 12:5</span></p>
+                </div>
+
+                <div class="lesson-part">
+                    <h3>2. Cada um de nós é um membro deste corpo</h3>
+                    <p><span class="bible-verse" data-ref="ICo. 12:12">ICo. 12:12</span></p>
+                </div>
+
+                <div class="lesson-part">
+                    <h3>3. Os membros de um corpo são:</h3>
+                    <div class="body-analogy">
+                        <div class="body-part">
+                            <h4>a) Dependentes</h4>
+                            <p>Ninguém vê um nariz na rua a andar sozinho, desligado do resto do corpo. Todos os membros estão interligados.</p>
+                        </div>
+                        <div class="body-part">
+                            <h4>b) Uma parte da ligação</h4>
+                            <p>O antebraço liga a mão ao braço.</p>
+                        </div>
+                        <div class="body-part">
+                            <h4>c) Uma parte que conduz o alimento</h4>
+                            <p>Recebe alimento para si e o passa para outro.</p>
+                        </div>
+                        <div class="body-part">
+                            <h4>d) Um elemento que está fixo</h4>
+                            <p>Um membro não pode ser atirado fora do corpo. Morre se não estiver ligado e fixo.</p>
+                        </div>
+                        <div class="body-part">
+                            <h4>e) Uma parte que transmite ordens</h4>
+                            <p>A cabeça transmite a ordem a mão e passa por outras partes do corpo até chegar a mão.</p>
+                        </div>
+                        <div class="body-part">
+                            <h4>f) Elástico. É flexível</h4>
+                            <p>Não é um robot. Não deve fazer só o que lhe mandam. Enquanto é dependente também é autónomo.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-part">
+                    <h3>4. Consideração pelos outros membros</h3>
+                    <p>O que fazemos devemos ter sempre em consideração como isso afectará os outros membros: os edificará ou os destruirá?</p>
+                    <p><span class="bible-verse" data-ref="ITs. 5:11">ITs. 5:11</span> / <span class="bible-verse" data-ref="Rm. 15:2">Rm. 15:2</span> / <span class="bible-verse" data-ref="Rm. 14:19">Rm. 14:19</span></p>
+                </div>
+
+                <div class="lesson-part">
+                    <h3>5. Relacionamento no Corpo</h3>
+                    <div class="bible-list">
+                        <p><strong>a)</strong> Devemos nos honrar uns aos outros - <span class="bible-verse" data-ref="Rm. 12:10">Rm. 12:10</span></p>
+                        <p><strong>b)</strong> Considerar os outros superiores a nós mesmos - <span class="bible-verse" data-ref="Fp. 2:3">Fp. 2:3</span></p>
+                        <p><strong>c)</strong> Suportando-nos uns aos outros - <span class="bible-verse" data-ref="Ef. 4:2">Ef. 4:2</span></p>
+                    </div>
+                </div>
+
+                <!-- Diagrama do Corpo -->
+                <div class="bible-diagram">
+                    <div class="diagram-title">A Igreja como Corpo de Cristo</div>
+                    <div class="body-relationship">
+                        <div class="body-head">
+                            <strong>CRISTO, A CABEÇA</strong>
+                        </div>
+                        <div class="body-arrow">↓</div>
+                        <div class="body-members">
+                            <strong>NÓS, O SEU CORPO E MEMBROS UNS DOS OUTROS</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-actions">
+                    <button class="btn btn-secondary" onclick="loadLesson(11)">
+                        <i class="fas fa-arrow-left"></i> Lição Anterior
+                    </button>
+                    <button class="btn btn-secondary" onclick="markLessonCompleted(12)">
+                        <i class="fas fa-check"></i> Marcar como Concluída
+                    </button>
+                    <button class="btn btn-primary" onclick="loadLesson(13)">
+                        Próxima Lição <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lição 13 - NOVA -->
+        <section class="lesson-section" id="lesson13">
+            <div class="lesson-header">
+                <h2><i class="fas fa-church"></i> Lição 13: Santificação</h2>
+                <div class="lesson-meta">
+                    <span class="bible-refs"><i class="fas fa-bible"></i> 20 referências</span>
+                    <span class="duration"><i class="far fa-clock"></i> ...</span>
+                </div>
+            </div>
+
+            <div class="lesson-content">
+                <div class="lesson-part">
+                    <h3>1. Dois aspectos da santificação:</h3>
+                    <div class="bible-list">
+                        <p><strong>a) Negativo</strong> - Afastado do mundo - <span class="bible-verse" data-ref="Rm. 12:2">Rm. 12:2</span> / <span class="bible-verse" data-ref="Ap. 18:4">Ap. 18:4</span></p>
+                        <p><strong>b) Positivo</strong> - Chegados a Deus - <span class="bible-verse" data-ref="Hb. 10:22">Hb. 10:22</span> / <span class="bible-verse" data-ref="Tg. 4:8">Tg. 4:8</span></p>
+                    </div>
+                    <p>Santificação é maior do que fazer isto ou aquilo que não agrada a Deus, e sim, fazer o que Deus deseja - <span class="bible-verse" data-ref="ITs. 4:3-12">ITs. 4:3-12</span></p>
+                </div>
+
+                <div class="lesson-part">
+                    <h3>2. O afastamento do mundo</h3>
+                    <p>A ideia do afastamento do mundo, é daquilo que o mundo faz é do Espírito que domina o mundo (hostes malignas) e não uma alienação do mundo ou afastamento de pessoas literalmente.</p>
+                    <div class="bible-list">
+                        <p><span class="bible-verse" data-ref="Jo. 17:14-17">Jo. 17:14-17</span> / <span class="bible-verse" data-ref="IJo. 2:15-17">IJo. 2:15-17</span> / <span class="bible-verse" data-ref="ICo. 9:20-23">ICo. 9:20-23</span></p>
+                    </div>
+                </div>
+
+                <div class="lesson-part">
+                    <h3>3. Santificação é condição para ver Deus</h3>
+                    <p><span class="bible-verse" data-ref="Hb. 12:14">Hb. 12:14</span></p>
+                    <p>Ver Deus não significa somente quando chegamos ao céu, mas uma influência em nossas vidas, sua mão estendida para operar em nós, enquanto aqui vivemos. Nosso desejo é "ver Deus" operando em nossas vidas.</p>
+                </div>
+
+                <div class="lesson-part">
+                    <h3>4. A nossa santificação é da vontade de Deus</h3>
+                    <p><span class="bible-verse" data-ref="ITs. 4:2-4">ITs. 4:2-4</span></p>
+                </div>
+
+                <div class="lesson-part">
+                    <h3>5. Santificação consumada:</h3>
+                    <div class="bible-list">
+                        <p><strong>a)</strong> Por Deus - <span class="bible-verse" data-ref="Ez. 37:28">Ez. 37:28</span> / <span class="bible-verse" data-ref="ITs. 5:23">ITs. 5:23</span></p>
+                        <p><strong>b)</strong> Por cristo - <span class="bible-verse" data-ref="Jo. 17:19">Jo. 17:19</span> / <span class="bible-verse" data-ref="ICo. 1:2,30">ICo. 1:2,30</span> / <span class="bible-verse" data-ref="Ef. 5:25-26">Ef. 5:25-26</span></p>
+                        <p><strong>c)</strong> Pelo Espírito Santo - <span class="bible-verse" data-ref="Rm. 15:16">Rm. 15:16</span> / <span class="bible-verse" data-ref="ICo. 6:11">ICo. 6:11</span></p>
+                        <p><strong>d)</strong> Pela verdade - <span class="bible-verse" data-ref="Jo. 17:17">Jo. 17:17</span> / <span class="bible-verse" data-ref="IPd. 1:22">IPd. 1:22</span></p>
+                    </div>
+                </div>
+
+                <div class="lesson-part">
+                    <h3>6. As três fases da santificação:</h3>
+                    <div class="sanctification-stages">
+                        <div class="stage-card stage-instant">
+                            <h4>A. Instantânea</h4>
+                            <p><strong>Do espírito</strong> - na hora da salvação</p>
+                            <div class="bible-ref"><span class="bible-verse" data-ref="ICo. 6:10-11">ICo. 6:10-11</span></div>
+                        </div>
+                        <div class="stage-card stage-progressive">
+                            <h4>B. Progressiva</h4>
+                            <p><strong>Da alma</strong> - no caminho diário com Deus</p>
+                            <p><em>Da alma (emoções, vontades, sentimentos, mente) se vai processando à medida que melhor conhecemos ao Senhor e vamos deixando ELE trabalhar em nós.</em></p>
+                            <div class="bible-ref"><span class="bible-verse" data-ref="Cl. 1:22-23">Cl. 1:22-23</span></div>
+                        </div>
+                        <div class="stage-card stage-final">
+                            <h4>C. Final</h4>
+                            <p><strong>Do corpo</strong> - na altura do arrebatamento</p>
+                            <p><em>Do corpo. Sua santificação real será no dia do arrebatamento.</em></p>
+                            <div class="bible-ref"><span class="bible-verse" data-ref="ICo. 15:53-54">ICo. 15:53-54</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reino de Deus -->
+                <div class="bible-diagram">
+                    <div class="diagram-title">REINO DE DEUS</div>
+                    <div class="diagram-note">
+                        <p><strong>O crente santificado vive no mundo mas não é do mundo.</strong></p>
+                        <p><span class="bible-verse" data-ref="Jo. 17:15-17">Jo. 17:15-17</span></p>
+                    </div>
+                </div>
+
+                <div class="lesson-actions">
+                    <button class="btn btn-secondary" onclick="loadLesson(12)">
+                        <i class="fas fa-arrow-left"></i> Lição Anterior
+                    </button>
+                    <button class="btn btn-secondary" onclick="markLessonCompleted(13)">
+                        <i class="fas fa-check"></i> Marcar como Concluída
+                    </button>
+                    <button class="btn btn-primary" onclick="loadLesson(10)">
+                        Recomeçar Classe <i class="fas fa-redo"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Navegação entre lições -->
+        <section class="lessons-navigation">
+            <h3>Navegar entre Lições da Classe III</h3>
+            <div class="nav-buttons">
+                <button class="nav-btn" onclick="loadLesson(10)">Lição 10</button>
+                <button class="nav-btn" onclick="loadLesson(11)">Lição 11</button>
+                <button class="nav-btn" onclick="loadLesson(12)">Lição 12</button>
+                <button class="nav-btn" onclick="loadLesson(13)">Lição 13</button>
+            </div>
+        </section>
+    </div>
+
+    <!-- Botão Voltar ao Topo -->
+    <button id="goTopBtn" class="go-top-btn" title="Voltar ao Topo">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Tooltip para versículos -->
+    <div id="bibleTooltip" class="bible-tooltip"></div>
+
+    <footer>
+        <p>Igreja Evangélica Assembleia de Deus da Baixa - Congregação de Ndiavela</p>
+        <p>Classe III - Doutrinas Bíblicas</p>
+        <div class="footer-links">
+            <a href="class2.html"><i class="fas fa-arrow-left"></i> Classe Anterior</a> |
+            <a href="index.html"><i class="fas fa-home"></i> Página Inicial</a> |
+            <a href="class4.html">Próxima Classe <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </footer>
+
+    <script src="bible-data.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // Funções específicas para class3.html
+        function loadLesson(lessonNumber) {
+            document.querySelectorAll('.lesson-section').forEach(lesson => {
+                lesson.classList.remove('active');
+            });
+            
+            const selectedLesson = document.getElementById(`lesson${lessonNumber}`);
+            if (selectedLesson) {
+                selectedLesson.classList.add('active');
+                selectedLesson.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        function markLessonCompleted(lessonNumber) {
+            const completedLessons = JSON.parse(localStorage.getItem('completedLessons') || '[]');
+            if (!completedLessons.includes(lessonNumber.toString())) {
+                completedLessons.push(lessonNumber.toString());
+                localStorage.setItem('completedLessons', JSON.stringify(completedLessons));
+                alert(`Lição ${lessonNumber} marcada como concluída!`);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            loadLesson(10);
+            initializeBibleVerses();
+        });
+    </script>
+</body>
+</html>

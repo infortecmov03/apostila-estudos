@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classe II - Apostila de Batismo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .will-comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .will-column {
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .human-will {
+            background: #f8d7da;
+            border-left: 4px solid #dc3545;
+        }
+        .god-will {
+            background: #d4edda;
+            border-left: 4px solid #28a745;
+        }
+        .witness-flow {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .flow-step {
+            padding: 15px;
+            background: #e8f4fd;
+            border-radius: 8px;
+            border: 2px solid #b8daff;
+            text-align: center;
+            width: 80%;
+        }
+        .discipleship-pyramid {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            margin: 20px 0;
+        }
+        .pyramid-level {
+            padding: 15px;
+            text-align: center;
+            border-radius: 5px;
+            width: 60%;
+        }
+        .level-1 { background: #d4edda; width: 40%; }
+        .level-2 { background: #cce7ff; width: 60%; }
+        .level-3 { background: #e8f4fd; width: 80%; }
+        .level-4 { background: #fff3cd; width: 100%; }
+        .fruit-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .fruit-item {
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+            border-left: 4px solid #28a745;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <!-- Menu Hamburger -->
+    <div class="hamburger-menu">
+        <div class="hamburger-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav class="sidebar-nav">
+            <div class="sidebar-header">
+                <h3>Navegação</h3>
+                <div class="close-sidebar">&times;</div>
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="index.html" class="nav-home"><i class="fas fa-home"></i> Página Inicial</a></li>
+                <li class="menu-divider">Classes</li>
+                <li><a href="class1.html"><i class="fas fa-book"></i> Classe I</a></li>
+                <li><a href="class2.html" class="active"><i class="fas fa-book"></i> Classe II</a></li>
+                <li><a href="class3.html"><i class="fas fa-book"></i> Classe III</a></li>
+                <li><a href="class4.html"><i class="fas fa-book"></i> Classe IV</a></li>
+                <li class="menu-divider">Ações</li>
+                <li><a href="#" onclick="window.print()"><i class="fas fa-print"></i> Imprimir</a></li>
+                <li><a href="class1.html"><i class="fas fa-arrow-left"></i> Voltar</a></li>
+            </ul>
+            <div class="sidebar-footer">
+                <p>Igreja Evangélica<br>Assembleia de Deus<br>da Baixa - Ndlavela</p>
+            </div>
+        </nav>
+    </div>
+
+    <header>
+        <div class="header-content">
+            <button class="print-btn" onclick="window.print()">
+                <i class="fas fa-print"></i> Imprimir
+            </button>
+            <div class="church-info">
+                <h1>Classe II - Vida Cristã Prática</h1>
+                <div class="subtitle">5 Lições para o Crescimento Espiritual</div>
+            </div>
+            <a href="class1.html" class="back-btn">
+                <i class="fas fa-arrow-left"></i> Classe Anterior
+            </a>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Lição 5 (Já existe) -->
+        <section class="lesson-section active" id="lesson5">
+            <div class="lesson-header">
+                <h2><i class="fas fa-shield-alt"></i> Lição 5: Como Vencer a Tentação</h2>
+                <div class="lesson-meta">
+                    <span class="bible-refs"><i class="fas fa-bible"></i> 10 referências</span>
+                    <span class="duration"><i class="far fa-clock"></i> 40 min</span>
+                </div>
+            </div>
+
+            <div class="lesson-content">
+                <div class="lesson-part">
+                    <h3>REVISÃO DA CLASSE I</h3>
+                    <div class="review-list">
+                        <p>1. <strong>Salvação</strong> - 3 a 4 perguntas</p>
+                        <p>2. <strong>Bíblia</strong> - livros memorizados</p>
+                        <p>3. <strong>Oração</strong> - pedir que orem</p>
+                        <p>4. <strong>Perdão</strong> - <span class="bible-verse" data-ref="Is. 43:25">Is. 43:25</span> / <span class="bible-verse" data-ref="Lc. 17:4">Lc. 17:4</span> - Deus perdoou, devemos perdoar</p>
+                        <p>5. <strong>Tentação</strong> - <span class="bible-verse" data-ref="ICo. 10:13">ICo. 10:13</span> - junto vem o escape.</p>
+                    </div>
+                </div>
+
+                <div class="lesson-part">
+                    <h3>1 - Sujeitamo-nos a Deus</h3>
+                    <p><span class="bible-verse" data-ref="Tg. 4:7">Tg. 4:7</span> - Este é o método mais eficaz para vencer a tentação.</p>
+                    <p>Não há forma resistir (ao Diabo) sem estarmos primeiro sujeitos (a Deus)</p>
+                    <div class="bible-list">
+                        <p><strong>a)</strong> Sujeição significa crer que Deus tem a resposta para TODA a tentação a destacarmos n'Ele - 
+                           <span class="bible-verse" data-ref="Is. 55:8">Is. 55:8</span> / 
+                           <span class="bible-verse" data-ref="Ex. 33:14">Ex. 33:14</span> / 
+                           <span class="bible-verse" data-ref="Sl. 37:7">Sl. 37:7</span></p>
+                    </div>
+                </div>
+
+                <div class="lesson-part">
+                    <h3>2. Examinar porquê da tentação</h3>
+                    <p><span class="bible-verse" data-ref="IICo. 13:5">IICo. 13:5</span></p>
+                    <p>Posso ser tentado por me estar expor no perigo:</p>
+                    <div class="warning-list">
+                        <p>• Amizades duvidosas</p>
+                        <p>• Lugares impróprios</p>
+                        <p>• Conversas que não edificam (Ex: sobre sexo fora do contexto bíblico, etc.)</p>
+                    </div>
+                </div>
+
+                <div class="lesson-part">
+                    <h3>3. Não procurar soluções fáceis fora da vontade de Deus</h3>
+                    <p>Ex: feitiçaria, curandeirismo, conselho anti bíblicos, etc. - 
+                       <span class="bible-verse" data-ref="Jo. 15:5">Jo. 15:5</span> / 
+                       <span class="bible-verse" data-ref="IISm. 11:15">IISm. 11:15</span> / 
+                       <span class="bible-verse" data-ref="IISm. 12:9-12">IISm. 12:9-12</span></p>
+                    <div class="bible-list">
+                        <p><strong>a)</strong> Deus pode nos livrar - <span class="bible-verse" data-ref="IIPd. 2:9">IIPd. 2:9</span>. Porque não buscá-lo primeiro?</p>
+                        <p>ELE nunca nos lança fora. - <span class="bible-verse" data-ref="Jo. 6:37">Jo. 6:37</span></p>
+                    </div>
+                </div>
+
+                <div class="lesson-part">
+                    <h3>4. Temos as armaduras de Deus contra a tentação</h3>
+                    <div class="bible-list">
+                        <p><strong>a)</strong> Espada do espírito, sua palavra - 
+                           <span class="bible-verse" data-ref="Ef. 6:17">Ef. 6:17</span> / 
+                           <span class="bible-verse" data-ref="Lc. 4:3-12">Lc. 4:3-12</span>. Jesus usou a palavra</p>
+                        <p><strong>b)</strong> A Oração - <span class="bible-verse" data-ref="Ef. 6:18">Ef. 6:18</span></p>
+                    </div>
+                </div>
+
+                <div class="bible-diagram">
+                    <div class="diagram-title">Exame para Vencer a Tentação</div>
+                    <div class="examination-grid">
+                        <div class="exam-item">
+                            <div class="exam-icon"><i class="fas fa-search"></i></div>
+                            <div class="exam-title">EXAME</div>
+                            <div class="exam-desc">Analisar as causas</div>
+                        </div>
+                        <div class="exam-item">
+                            <div class="exam-icon"><i class="fas fa-book-bible"></i></div>
+                            <div class="exam-title">PALAVRA</div>
+                            <div class="exam-desc">Usar as Escrituras</div>
+                        </div>
+                        <div class="exam-item">
+                            <div class="exam-icon"><i class="fas fa-pray"></i></div>
+                            <div class="exam-title">ORAÇÃO</div>
+                            <div class="exam-desc">Buscar a Deus</div>
+                        </div>
+                        <div class="exam-item">
+                            <div class="exam-icon"><i class="fas fa-person-praying"></i></div>
+                            <div class="exam-title">SUJEIÇÃO</div>
+                            <div class="exam-desc">Render-se a Deus</div>
+                        </div>
+                        <div class="exam-item">
+                            <div class="exam-icon"><i class="fas fa-hand-sparkles"></i></div>
+                            <div class="exam-title">VONTADE DE DEUS</div>
+                            <div class="exam-desc">Seguir Seu plano</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-actions">
+                    <button class="btn btn-secondary" onclick="markLessonCompleted(5)">
+                        <i class="fas fa-check"></i> Marcar como Concluída
+                    </button>
+                    <button class="btn btn-primary" onclick="loadLesson(6)">
+                        Próxima Lição <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lição 6 - NOVA -->
+        <section class="lesson-section" id="lesson6">
+            <div class="lesson-header">
+                <h2><i class="fas fa-hands-praying"></i> Lição 6: A Vontade de Deus</h2>
+                <div class="lesson-meta">
+                    <span class="bible-refs"><i class="fas fa-bible"></i> 12 referências</span>
+                    <span class="duration"><i class="far fa-clock"></i> 30 min</span>
+                </div>
+            </div>
+
+            <div class="lesson-content">
+                <div class="lesson-part">
+                    <h3>1. Como conhecer a vontade de Deus?</h3>
+                    <div class="bible-list">
+                        <p><strong>a)</strong> Pela palavra - <span class="bible-verse" data-ref="Sl. 119:11">Sl. 119:11</span></p>
+                        <p><strong>b)</strong> Pela oração - <span class="bible-verse" data-ref="Sl. 143:10">Sl. 143:10</span></p>
+                        <p><strong>c)</strong> Pela pregação - <span class="bible-verse" data-ref="Rm. 10:14">Rm. 10:14</span></p>
+                    </div>
+                </div>
+
+                <div class="lesson-part">
+                    <h3>2. O que é a vontade de Deus?</h3>
+                    <div class="bible-list">
+                        <p><strong>a)</strong> É o seu desejo realizado na terra através de nós crentes - <span class="bible-verse" data-ref="At. 5:12">At. 5:12</span></p>
+                    </div>
+                </div>
+
+                <div class="lesson-part">
+                    <h3>3. Fazer a vontade de Deus:</h3>
+                    <div class="bible-list">
+                        <p><strong>a)</strong> Implica deixar de lado a minha vontade - <span class="bible-verse" data-ref="Jz. 7:17">Jz. 7:17</span> / <span class="bible-verse" data-ref="Jo. 5:30">Jo. 5:30</span></p>
+                        <p><strong>b)</strong> Implica paciência - <span class="bible-verse" data-ref="Hb. 10:36">Hb. 10:36</span></p>
+                        <p><strong>c)</strong> Implica fazer o bem - <span class="bible-verse" data-ref="IPd. 2:15">IPd. 2:15</span></p>
+                    </div>
+                </div>
+
+                <div class="lesson-part">
+                    <h3>4. Quem faz a vontade de Deus, permanece</h3>
+                    <p><span class="bible-verse" data-ref="IJo. 2:17">IJo. 2:17</span></p>
+                </div>
+
+                <div class="lesson-part">
+                    <h3>5. A vontade de Deus é dupla:</h3>
+                    <div class="bible-list">
+                        <p><strong>a) GERAL</strong> - Encontra-se em sua Palavra, que são regras de fundamentos básicos para a vida cristã - <span class="bible-verse" data-ref="Sl. 119:11">Sl. 119:11</span></p>
+                        <p><strong>b) ESPECÍFICA</strong> - por revelação do espírito santo, através de Deus e no:</p>
+                        <div class="sub-list">
+                            <p>✓ Homem interior - <span class="bible-verse" data-ref="At. 13:2">At. 13:2</span> e <span class="bible-verse" data-ref="At. 13:47">47</span></p>
+                            <p>✓ Ao crente que ora - <span class="bible-verse" data-ref="At. 9:11">At. 9:11</span></p>
+                            <p>✓ Ao crente que medita na palavra - <span class="bible-verse" data-ref="Sl. 119:9">Sl. 119:9</span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-part">
+                    <h3>6. A vontade de Deus deverá ser efectuada, acima de tudo o resto</h3>
+                    <p><span class="bible-verse" data-ref="At. 4:19">At. 4:19</span> / <span class="bible-verse" data-ref="At. 4:20">At. 4:20</span> / <span class="bible-verse" data-ref="Mt. 6:33">Mt. 6:33</span></p>
+                </div>
+
+                <div class="lesson-part">
+                    <h3>7. O cumprimento da vontade de Deus estabelece uma relação divina</h3>
+                    <p><span class="bible-verse" data-ref="Mt. 12:50">Mt. 12:50</span></p>
+                </div>
+
+                <!-- Diagrama de Comparação -->
+                <div class="bible-diagram">
+                    <div class="diagram-title">Comparação: Nossa Vontade vs Vontade de Deus</div>
+                    <div class="will-comparison">
+                        <div class="will-column human-will">
+                            <h4>A nossa vontade</h4>
+                            <p>O que nos parece melhor</p>
+                            <div class="bible-ref"><span class="bible-verse" data-ref="Jr. 17:9">Jr. 17:9</span></div>
+                        </div>
+                        <div class="will-column god-will">
+                            <h4>A vontade de Deus</h4>
+                            <p>O que é melhor para nós</p>
+                            <div class="bible-ref"><span class="bible-verse" data-ref="Jr. 17:12">Jr. 17:12</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-actions">
+                    <button class="btn btn-secondary" onclick="loadLesson(5)">
+                        <i class="fas fa-arrow-left"></i> Lição Anterior
+                    </button>
+                    <button class="btn btn-secondary" onclick="markLessonCompleted(6)">
+                        <i class="fas fa-check"></i> Marcar como Concluída
+                    </button>
+                    <button class="btn btn-primary" onclick="loadLesson(7)">
+                        Próxima Lição <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lição 7 - NOVA -->
+        <section class="lesson-section" id="lesson7">
+            <div class="lesson-header">
+                <h2><i class="fas fa-microphone"></i> Lição 7: O Testemunho</h2>
+                <div class="lesson-meta">
+                    <span class="bible-refs"><i class="fas fa-bible"></i> 15 referências</span>
+                    <span class="duration"><i class="far fa-clock"></i> 25 min</span>
+                </div>
+            </div>
+
+            <div class="lesson-content">
+                <div class="lesson-part">
+                    <h3>1. Propósito da Salvação: Ser testemunhas</h3>
+                    <p>Um dos mais importantes propósitos para o qual Deus nos salvou, foi: Sermos suas testemunhas</p>
+                    <div class="bible-list">
+                        <p><span class="bible-verse" data-ref="At. 4:20">At. 4:20</span> / <span class="bible-verse" data-ref="Is. 43:10">Is. 43:10</span> / <span class="bible-verse" data-ref="At. 1:8">At. 1:8</span></p>
+                    </div>
+                </div>
+
+                <div class="lesson-part">
+                    <h3>2. Características do Testemunho</h3>
+                    <div class="bible-list">
+                        <p><strong>Incessantemente</strong> - <span class="bible-verse" data-ref="Is. 62:6">Is. 62:6</span></p>
+                        <p><strong>a)</strong> É um dever diário - <span class="bible-verse" data-ref="Mt. 3:16">Mt. 3:16</span> / <span class="bible-verse" data-ref="Mt. 9:31">Mt. 9:31</span></p>
+                        <p><strong>b)</strong> A todos - <span class="bible-verse" data-ref="Mc. 16:15">Mc. 16:15</span></p>
+                    </div>
+                </div>
+
+                <div class="lesson-part">
+                    <h3>3. A verdadeira testemunha fala:</h3>
+                    <div class="bible-list">
+                        <p><strong>a)</strong> Do que sabe - <span class="bible-verse" data-ref="Jo. 3:11">Jo. 3:11</span> / <span class="bible-verse" data-ref="IJo. 5:20">IJo. 5:20</span></p>
+                        <p><strong>b)</strong> Do que viu - <span class="bible-verse" data-ref="At. 4:20">At. 4:20</span></p>
+                        <p><strong>c)</strong> Do que sente - <span class="bible-verse" data-ref="Fp. 2:2">Fp. 2:2</span></p>
+                        <p><strong>d)</strong> Do que ouviu - <span class="bible-verse" data-ref="At. 4:20">At. 4:20</span></p>
+                        <p><strong>e)</strong> Do que crê - <span class="bible-verse" data-ref="IICo. 4:13">IICo. 4:13</span></p>
+                        <p><strong>f)</strong> Do que vive - <span class="bible-verse" data-ref="ICo. 9:14">ICo. 9:14</span></p>
+                    </div>
+                </div>
+
+                <div class="lesson-part">
+                    <h3>4. O testemunho pelas ações</h3>
+                    <p>A mensagem da testemunha, pode ser sábia e verdadeira, mas o mundo aprende melhor a lição observando o que ela faz</p>
+                    <div class="bible-list">
+                        <p><span class="bible-verse" data-ref="Gl. 6:9">Gl. 6:9</span> / <span class="bible-verse" data-ref="Lc. 6:31">Lc. 6:31</span> / <span class="bible-verse" data-ref="IPd. 3:1">IPd. 3:1</span></p>
+                    </div>
+                </div>
+
+                <div class="lesson-part">
+                    <h3>5. O papel do Espírito Santo no testemunho</h3>
+                    <p>O espírito santo é quem fortalece a fiel testemunha - <span class="bible-verse" data-ref="At. 1:8">At. 1:8</span></p>
+                </div>
+
+                <!-- Diagrama do Testemunho -->
+                <div class="bible-diagram">
+                    <div class="diagram-title">Processo do Testemunho Eficaz</div>
+                    <div class="witness-flow">
+                        <div class="flow-step">
+                            <strong>Cheio do Espírito Santo</strong>
+                            <div>Poder para testemunhar</div>
+                        </div>
+                        <div class="flow-arrow">↓</div>
+                        <div class="flow-step">
+                            <strong>Conhecedor da Palavra</strong>
+                            <div>Base bíblica sólida</div>
+                        </div>
+                        <div class="flow-arrow">↓</div>
+                        <div class="flow-step">
+                            <strong>Compaixão pelas almas</strong>
+                            <div>Amor pelas pessoas</div>
+                        </div>
+                        <div class="flow-arrow">↓</div>
+                        <div class="flow-step" style="background: #d4edda;">
+                            <strong>TESTEMUNHO TRANSFORMADO</strong>
+                            <div>Impacto no MUNDO</div>
+                        </div>
+                    </div>
+                    <div class="diagram-note">
+                        <p><strong>O CRENTE:</strong> Instrumento de Deus para transformar vidas</p>
+                    </div>
+                </div>
+
+                <div class="lesson-actions">
+                    <button class="btn btn-secondary" onclick="loadLesson(6)">
+                        <i class="fas fa-arrow-left"></i> Lição Anterior
+                    </button>
+                    <button class="btn btn-secondary" onclick="markLessonCompleted(7)">
+                        <i class="fas fa-check"></i> Marcar como Concluída
+                    </button>
+                    <button class="btn btn-primary" onclick="loadLesson(8)">
+                        Próxima Lição <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lição 8 - NOVA -->
+        <section class="lesson-section" id="lesson8">
+            <div class="lesson-header">
+                <h2><i class="fas fa-users"></i> Lição 8: O Discipulado</h2>
+                <div class="lesson-meta">
+                    <span class="bible-refs"><i class="fas fa-bible"></i> 12 referências</span>
+                    <span class="duration"><i class="far fa-clock"></i> 35 min</span>
+                </div>
+            </div>
+
+            <div class="lesson-content">
+                <div class="lesson-part">
+                    <h3>1. A Grande Comissão</h3>
+                    <p>Foi a ordem que Cristo deu. "Ide e fazei discípulos de todas as nações" - <span class="bible-verse" data-ref="Mc. 16:15">Mc. 16:15</span></p>
+                </div>
+
+                <div class="lesson-part">
+                    <h3>2. Condições para o discipulado:</h3>
+                    <div class="bible-list">
+                        <p><strong>a)</strong> Auto negação e suportar a cruz - <span class="bible-verse" data-ref="Mt. 16:24">Mt. 16:24</span></p>
+                        <p><strong>b)</strong> Renúncia - <span class="bible-verse" data-ref="Lc. 14:26">Lc. 14:26</span></p>
+                        <p><strong>c)</strong> Abandonar tudo o que se interponha entre o crente e o seu Senhor - <span class="bible-verse" data-ref="Lc. 14:33">Lc. 14:33</span></p>
+                        <p><strong>d)</strong> Constância e fidelidade - <span class="bible-verse" data-ref="Jo. 8:31">Jo. 8:31</span></p>
+                        <p><strong>e)</strong> Produção de frutos - <span class="bible-verse" data-ref="Jo. 15:8">Jo. 15:8</span>, <span class="bible-verse" data-ref="Jo. 15:16">16</span></p>
+                    </div>
+                </div>
+
+                <div class="lesson-part">
+                    <h3>3. Formação de discípulos</h3>
+                    <div class="bible-list">
+                        <p><strong>a)</strong> Ser discípulo do Senhor não é possuir formulas guardadas no cérebro, mas tarefas concretas para realizar - <span class="bible-verse" data-ref="Mt. 10:6">Mt. 10:6</span> / 8,10,11</p>
+                        <p><strong>b)</strong> Sem submissão não há formação - <span class="bible-verse" data-ref="Ef. 5:21">Ef. 5:21</span> / <span class="bible-verse" data-ref="Hb. 13:17">Hb. 13:17</span></p>
+                        <p><strong>c)</strong> Sem submissão não há submissão - <span class="bible-verse" data-ref="Mt. 8:7">Mt. 8:7</span>, <span class="bible-verse" data-ref="Mt. 8:9">9</span> / <span class="bible-verse" data-ref="Rm. 13:1">Rm. 13:1</span></p>
+                    </div>
+                    <p>O que faz discípulos precisa estar sujeito a Cristo - <span class="bible-verse" data-ref="ICo. 3:21-23">ICo. 3:21-23</span></p>
+                </div>
+
+                <div class="lesson-part">
+                    <h3>4. Todo o crente deve anelar ser um discípulo</h3>
+                    <p>Ser discípulo é alcançar a maturidade espiritual e conseguir levar outros a alcançá-la - <span class="bible-verse" data-ref="ICo. 11:1">ICo. 11:1</span></p>
+                </div>
+
+                <div class="attention-box">
+                    <strong>É IMPORTANTE ENTENDER QUE O DISCIPULADO DEVE ENVOLVER TODA A IGREJA. 
+                    OU SEJA, TODO CRENTE DEVE SER UM DISCIPULO E UM DISCIPULADOR – TODOS CUIDANDO UNS DOS OUTROS</strong>
+                </div>
+
+                <!-- Diagrama do Discipulado -->
+                <div class="bible-diagram">
+                    <div class="diagram-title">Rede de Discipulado</div>
+                    <div class="discipleship-pyramid">
+                        <div class="pyramid-level level-1">
+                            <strong>DEUS PAI</strong>
+                        </div>
+                        <div class="pyramid-level level-2">
+                            <strong>CRISTO</strong>
+                        </div>
+                        <div class="pyramid-level level-3">
+                            <strong>DISCIPULO</strong>
+                        </div>
+                        <div class="pyramid-level level-4">
+                            <strong>DISCIPULO → DISCIPULO → DISCIPULO</strong>
+                        </div>
+                    </div>
+                    <div class="diagram-note">
+                        <p><strong>SUBMISSOS UNS AOS OUTROS SOMOS DEPENDENTES</strong> (<span class="bible-verse" data-ref="Ef. 5:21">Ef. 5:21</span>)</p>
+                    </div>
+                </div>
+
+                <div class="lesson-actions">
+                    <button class="btn btn-secondary" onclick="loadLesson(7)">
+                        <i class="fas fa-arrow-left"></i> Lição Anterior
+                    </button>
+                    <button class="btn btn-secondary" onclick="markLessonCompleted(8)">
+                        <i class="fas fa-check"></i> Marcar como Concluída
+                    </button>
+                    <button class="btn btn-primary" onclick="loadLesson(9)">
+                        Próxima Lição <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lição 9 - NOVA -->
+        <section class="lesson-section" id="lesson9">
+            <div class="lesson-header">
+                <h2><i class="fas fa-apple-alt"></i> Lição 9: O Espírito Santo - Fruto</h2>
+                <div class="lesson-meta">
+                    <span class="bible-refs"><i class="fas fa-bible"></i> 20 referências</span>
+                    <span class="duration"><i class="far fa-clock"></i> 40 min</span>
+                </div>
+            </div>
+
+            <div class="lesson-content">
+                <div class="lesson-part">
+                    <h3>1. Motivação pelo Espírito Santo</h3>
+                    <div class="bible-list">
+                        <p><strong>a)</strong> Para os que andam em espírito - <span class="bible-verse" data-ref="Gl. 5:16-18">Gl. 5:16-18</span>, <span class="bible-verse" data-ref="Gl. 5:22">22</span> - <span class="bible-verse" data-ref="Gl. 5:16">Gl. 5:16</span></p>
+                    </div>
+                </div>
+
+                <div class="lesson-part">
+                    <h3>2. Manifestação nos salvos</h3>
+                    <div class="bible-list">
+                        <p><strong>a)</strong> Arrependidos - <span class="bible-verse" data-ref="Jo. 15:16">Jo. 15:16</span> - <span class="bible-verse" data-ref="Mt. 3:8">Mt. 3:8</span></p>
+                        <p><strong>b)</strong> Para os que são de Cristo e estão mortos para o mundo - <span class="bible-verse" data-ref="Rm. 7:4">Rm. 7:4</span></p>
+                    </div>
+                </div>
+
+                <div class="lesson-part">
+                    <h3>3. Propósito do fruto</h3>
+                    <p>É para glorificar a Deus e não o crente - <span class="bible-verse" data-ref="Fp. 1:11">Fp. 1:11</span></p>
+                </div>
+
+                <div class="lesson-part">
+                    <h3>4. Unidade e variedade do fruto</h3>
+                    <p>O fruto é um, com uma multiforme variedade de "sabores" ou manifestações. Existe desequilíbrio espiritual quando o fruto não se manifesta na sua totalidade, nos seus nove elementos.</p>
+                </div>
+
+                <div class="lesson-part">
+                    <h3>5. Condução pelo amor e ordem</h3>
+                    <p>Deverão ser conduzidos pelo amor, temperança e ordem - <span class="bible-verse" data-ref="ICo. 14:40">ICo. 14:40</span> e <span class="bible-verse" data-ref="Gl. 5:22">Gl. 5:22</span></p>
+                </div>
+
+                <!-- Os 9 Frutos do Espírito -->
+                <div class="lesson-part">
+                    <h3>Os 9 Frutos do Espírito</h3>
+                    <div class="fruit-grid">
+                        <div class="fruit-item">
+                            <h4>1. AMOR</h4>
+                            <p>Atitude uns para com os outros e para com Deus semelhante a que ele teve para connosco enviando seu filho</p>
+                            <div class="bible-ref"><span class="bible-verse" data-ref="ICo. 13:4-8">ICo. 13:4-8</span></div>
+                        </div>
+                        <div class="fruit-item">
+                            <h4>2. GOZO</h4>
+                            <p>Não é alegria, pois é circunstancial. O gozo não depende das circunstâncias</p>
+                            <div class="bible-ref"><span class="bible-verse" data-ref="Fp. 4:4">Fp. 4:4</span></div>
+                        </div>
+                        <div class="fruit-item">
+                            <h4>3. PAZ</h4>
+                            <p>Não é calma. É aquela segurança interior mesmo em meio a situações de conflito e guerras existenciais</p>
+                            <div class="bible-ref"><span class="bible-verse" data-ref="Jo. 14:27">Jo. 14:27</span></div>
+                        </div>
+                        <div class="fruit-item">
+                            <h4>4. LONGANIMIDADE</h4>
+                            <p>Paciência. Capacidade espiritual de não nos precipitarmos no julgamento de qualquer situação</p>
+                            <div class="bible-ref"><span class="bible-verse" data-ref="Ef. 4:32">Ef. 4:32</span></div>
+                        </div>
+                        <div class="fruit-item">
+                            <h4>5. BENIGNIDADE</h4>
+                            <p>(Bondade em acção)</p>
+                            <div class="bible-ref"><span class="bible-verse" data-ref="IICo. 6:6">IICo. 6:6</span> / <span class="bible-verse" data-ref="Sl. 18:25">Sl. 18:25</span></div>
+                        </div>
+                        <div class="fruit-item">
+                            <h4>6. BONDADE</h4>
+                            <p>Ser bom. Pensar o bem</p>
+                            <div class="bible-ref"><span class="bible-verse" data-ref="Ef. 5:9">Ef. 5:9</span></div>
+                        </div>
+                        <div class="fruit-item">
+                            <h4>7. FÉ</h4>
+                            <p>(ou fidelidade). Coerência nos propósitos que fazemos em nossa vida cristã</p>
+                            <div class="bible-ref"><span class="bible-verse" data-ref="IJo. 5:4">IJo. 5:4</span></div>
+                        </div>
+                        <div class="fruit-item">
+                            <h4>8. MANSIDÃO</h4>
+                            <p>Não defender seus próprios interesses em prejuízo de outros. Ser capaz de suspender a ira por causa do amor</p>
+                            <div class="bible-ref"><span class="bible-verse" data-ref="ITm. 6:11">ITm. 6:11</span> / <span class="bible-verse" data-ref="IITm. 2:24-25">IITm. 2:24-25</span></div>
+                        </div>
+                        <div class="fruit-item">
+                            <h4>9. TEMPERANÇA</h4>
+                            <p>Autodomínio sem zanglória própria</p>
+                            <div class="bible-ref"><span class="bible-verse" data-ref="Cl. 4:6">Cl. 4:6</span> / <span class="bible-verse" data-ref="Tt. 1:8">Tt. 1:8</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bible-diagram">
+                    <div class="diagram-title">FRUTO DO ESPÍRITO</div>
+                    <div class="diagram-note">
+                        <p>O fruto completo manifesta o caráter de Cristo em nós</p>
+                    </div>
+                </div>
+
+                <div class="lesson-actions">
+                    <button class="btn btn-secondary" onclick="loadLesson(8)">
+                        <i class="fas fa-arrow-left"></i> Lição Anterior
+                    </button>
+                    <button class="btn btn-secondary" onclick="markLessonCompleted(9)">
+                        <i class="fas fa-check"></i> Marcar como Concluída
+                    </button>
+                    <button class="btn btn-primary" onclick="loadLesson(5)">
+                        Recomeçar Classe <i class="fas fa-redo"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Navegação entre lições -->
+        <section class="lessons-navigation">
+            <h3>Navegar entre Lições da Classe II</h3>
+            <div class="nav-buttons">
+                <button class="nav-btn" onclick="loadLesson(5)">Lição 5</button>
+                <button class="nav-btn" onclick="loadLesson(6)">Lição 6</button>
+                <button class="nav-btn" onclick="loadLesson(7)">Lição 7</button>
+                <button class="nav-btn" onclick="loadLesson(8)">Lição 8</button>
+                <button class="nav-btn" onclick="loadLesson(9)">Lição 9</button>
+            </div>
+        </section>
+    </div>
+
+    <!-- Botão Voltar ao Topo -->
+    <button id="goTopBtn" class="go-top-btn" title="Voltar ao Topo">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Tooltip para versículos -->
+    <div id="bibleTooltip" class="bible-tooltip"></div>
+
+    <footer>
+        <p>Igreja Evangélica Assembleia de Deus da Baixa - Congregação de Ndiavela</p>
+        <p>Classe II - Vida Cristã Prática</p>
+        <div class="footer-links">
+            <a href="class1.html"><i class="fas fa-arrow-left"></i> Classe Anterior</a> |
+            <a href="index.html"><i class="fas fa-home"></i> Página Inicial</a> |
+            <a href="class3.html">Próxima Classe <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </footer>
+
+    <script src="bible-data.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // Funções específicas para class2.html
+        function loadLesson(lessonNumber) {
+            document.querySelectorAll('.lesson-section').forEach(lesson => {
+                lesson.classList.remove('active');
+            });
+            
+            const selectedLesson = document.getElementById(`lesson${lessonNumber}`);
+            if (selectedLesson) {
+                selectedLesson.classList.add('active');
+                selectedLesson.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        function markLessonCompleted(lessonNumber) {
+            const completedLessons = JSON.parse(localStorage.getItem('completedLessons') || '[]');
+            if (!completedLessons.includes(lessonNumber.toString())) {
+                completedLessons.push(lessonNumber.toString());
+                localStorage.setItem('completedLessons', JSON.stringify(completedLessons));
+                alert(`Lição ${lessonNumber} marcada como concluída!`);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            loadLesson(5);
+            initializeBibleVerses();
+        });
+    </script>
+</body>
+</html>

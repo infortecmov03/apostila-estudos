@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classe IV - Apostila de Batismo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .baptism-elements {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .element-column {
+            padding: 15px;
+            border-radius: 8px;
+            background: #f8f9fa;
+        }
+        .lord-supper-timeline {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .timeline-item {
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .past { background: #d4edda; }
+        .present { background: #e8f4fd; }
+        .future { background: #fff3cd; }
+        .fasting-occasions {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .occasion-item {
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+            border-left: 4px solid #007bff;
+        }
+        .discipline-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .step-item {
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #28a745;
+        }
+        .conduct-section {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .eschatology-chart {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .eschatology-item {
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- Menu Hamburger -->
+    <div class="hamburger-menu">
+        <div class="hamburger-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav class="sidebar-nav">
+            <div class="sidebar-header">
+                <h3>Navegação</h3>
+                <div class="close-sidebar">&times;</div>
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="index.html" class="nav-home"><i class="fas fa-home"></i> Página Inicial</a></li>
+                <li class="menu-divider">Classes</li>
+                <li><a href="class1.html"><i class="fas fa-book"></i> Classe I</a></li>
+                <li><a href="class2.html"><i class="fas fa-book"></i> Classe II</a></li>
+                <li><a href="class3.html"><i class="fas fa-book"></i> Classe III</a></li>
+                <li><a href="class4.html" class="active"><i class="fas fa-book"></i> Classe IV</a></li>
+                <li class="menu-divider">Ações</li>
+                <li><a href="#" onclick="window.print()"><i class="fas fa-print"></i> Imprimir</a></li>
+                <li><a href="class3.html"><i class="fas fa-arrow-left"></i> Voltar</a></li>
+            </ul>
+            <div class="sidebar-footer">
+                <p>Igreja Evangélica<br>Assembleia de Deus<br>da Baixa - Ndlavela</p>
+            </div>
+        </nav>
+    </div>
+
+    <header>
+        <div class="header-content">
+            <button class="print-btn" onclick="window.print()">
+                <i class="fas fa-print"></i> Imprimir
+            </button>
+            <div class="church-info">
+                <h1>Classe IV - Vida na Igreja</h1>
+                <div class="subtitle">7 Lições sobre a Vida Eclesiástica</div>
+            </div>
+            <a href="class3.html" class="back-btn">
+                <i class="fas fa-arrow-left"></i> Classe Anterior
+            </a>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Lição 14 (Já existe) -->
+        <section class="lesson-section active" id="lesson14">
+            <div class="lesson-header">
+                <h2><i class="fas fa-users"></i> Lição 14: Membresia</h2>
+                <div class="lesson-meta">
+                    <span class="bible-refs"><i class="fas fa-bible"></i> 12 referências</span>
+                    <span class="duration"><i class="far fa-clock"></i> 35 min</span>
+                </div>
+            </div>
+
+            <div class="lesson-content">
+                <div class="lesson-part">
+                    <h3>REVISÃO À CLASSE III</h3>
+                    <div class="review-list">
+                        <p>1 - <strong>O Espírito Santo</strong> - Baptismo - Concede poder - <span class="bible-verse" data-ref="At. 1:8">At. 1:8</span> - Dons - Do Espírito para edificação - <span class="bible-verse" data-ref="ICo. 14:3,12,26">ICo. 14:3,12,26</span></p>
+                        <p>2 - <strong>Factos não sentimentos</strong> - Viver pela Fé - <span class="bible-verse" data-ref="IICo. 5:7">IICo. 5:7</span></p>
+                        <p>3 - <strong>Consciência do corpo</strong> - Honrar uns aos outros - <span class="bible-verse" data-ref="Rm. 12:10">Rm. 12:10</span></p>
+                        <p>4 - <strong>Santificação</strong> - Separados do mundo - Juntos de Deus - <span class="bible-verse" data-ref="IPd. 1:15-16">IPd. 1:15-16</span> / <span class="bible-verse" data-ref="IPd. 2:9">IPd. 2:9</span></p>
+                    </div>
+                </div>
+
+                <div class="lesson-part">
+                    <h3>1. O salvo é membro universal do corpo de Cristo</h3>
+                    <p>Mas deve também fazer parte de uma igreja local. - 
+                       <span class="bible-verse" data-ref="ICo. 16:19">ICo. 16:19</span> / 
+                       <span class="bible-verse" data-ref="Rm. 16:1,16">Rm. 16:1,16</span></p>
+                </div>
+
+                <div class="lesson-part">
+                    <h3>2. Como membros da igreja local temos certos deveres:</h3>
+                    <div class="duties-list">
+                        <div class="duty-item">
+                            <strong>a)</strong> Agir sem fazer excepções - <span class="bible-verse" data-ref="Gl. 3:28">Gl. 3:28</span>
+                        </div>
+                        <div class="duty-item">
+                            <strong>b)</strong> Participar da alegria e tristeza uns dos outros - <span class="bible-verse" data-ref="Rm. 12:15">Rm. 12:15</span>
+                        </div>
+                        <div class="duty-item">
+                            <strong>c)</strong> Edificar uns aos outros - <span class="bible-verse" data-ref="ITs. 5:11">ITs. 5:11</span>
+                        </div>
+                        <div class="duty-item">
+                            <strong>d)</strong> Procurar a união - <span class="bible-verse" data-ref="ICo. 1:10">ICo. 1:10</span> / <span class="bible-verse" data-ref="Fp. 1:27">Fp. 1:27</span>
+                        </div>
+                        <div class="duty-item">
+                            <strong>e)</strong> Crescer com um corpo na vida cristã até a maturidade - <span class="bible-verse" data-ref="Ef. 4:12-13">Ef. 4:12-13</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-part">
+                    <h3>3. Como membro do corpo e da igreja local o crente não deve viver para si mesmo</h3>
+                    <p><span class="bible-verse" data-ref="Rm. 14:2-7">Rm. 14:2-7</span></p>
+                </div>
+
+                <div class="lesson-part">
+                    <h3>4. Nenhum crente individual pode afirmar que é Igreja</h3>
+                    <p>Pois ele não é um indivíduo, mas sim o conjunto de pessoas salvas que se congregam a diferentes igrejas locais.</p>
+                </div>
+
+                <div class="bible-diagram">
+                    <div class="diagram-title">Estrutura da Igreja Universal</div>
+                    <div class="church-structure">
+                        <div class="church-level">
+                            <div class="church-box universal">IGREJA UNIVERSAL</div>
+                        </div>
+                        <div class="connection-line">↓</div>
+                        <div class="church-level">
+                            <div class="church-box local">Igreja local</div>
+                            <div class="church-box local">Igreja local</div>
+                            <div class="church-box local">Igreja local</div>
+                            <div class="church-box local">Igreja local</div>
+                        </div>
+                        <div class="structure-note">
+                            (Conjunto dos salvos das Igrejas locais)
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-actions">
+                    <button class="btn btn-secondary" onclick="markLessonCompleted(14)">
+                        <i class="fas fa-check"></i> Marcar como Concluída
+                    </button>
+                    <button class="btn btn-primary" onclick="loadLesson(15)">
+                        Próxima Lição <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lição 15 - NOVA -->
+        <section class="lesson-section" id="lesson15">
+            <div class="lesson-header">
+                <h2><i class="fas fa-water"></i> Lição 15: Baptismo nas Águas</h2>
+                <div class="lesson-meta">
+                    <span class="bible-refs"><i class="fas fa-bible"></i> 15 referências</span>
+                    <span class="duration"><i class="far fa-clock"></i> 40 min</span>
+                </div>
+            </div>
+
+            <div class="lesson-content">
+                <div class="lesson-part">
+                    <h3>1. Significado do Baptismo</h3>
+                    <p>É símbolo da morte para o mundo e de uma nova vida para Deus - 
+                       <span class="bible-verse" data-ref="Rm. 6:4-9">Rm. 6:4-9</span> / 
+                       <span class="bible-verse" data-ref="Cl. 2:12">Cl. 2:12</span></p>
+                </div>
+
+                <div class="lesson-part">
+                    <h3>2. É um mandamento de Deus</h3>
+                    <p>É imposto por Deus ao salvo como um mandamento - 
+                       <span class="bible-verse" data-ref="Mt. 28:19">Mt. 28:19</span> / 
+                       <span class="bible-verse" data-ref="Mt. 16:16">Mt. 16:16</span> / 
+                       <span class="bible-verse" data-ref="At. 2:38-22:16">At. 2:38-22:16</span></p>
+                </div>
+
+                <div class="lesson-part">
+                    <h3>3. Desejo do salvo</h3>
+                    <p>Todo o salvo deve ter desejo de descer as águas do baptismo - <span class="bible-verse" data-ref="At. 8:36">At. 8:36</span></p>
+                </div>
+
+                <div class="lesson-part">
+                    <h3>4. Ensino prévio necessário</h3>
+                    <p>O crente deverá ser ensinado pela Palavra para ser baptizado - <span class="bible-verse" data-ref="Mc. 16:15-16">Mc. 16:15-16</span></p>
+                </div>
+
+                <div class="lesson-part">
+                    <h3>5. Manifestação visível</h3>
+                    <p>O baptismo é a manifestação visível, pública ou não externa da lavagem interior, da regeneração e da renovação do Espírito Santo - <span class="bible-verse" data-ref="Tt. 3:5">Tt. 3:5</span></p>
+                    <p>É um símbolo de novo nascimento - <span class="bible-verse" data-ref="Jo. 3:3">Jo. 3:3</span> / <span class="bible-verse" data-ref="Cl. 2:14">Cl. 2:14</span></p>
+                </div>
+
+                <div class="lesson-part">
+                    <h3>6. Importância da consciência</h3>
+                    <p>O mais importante não é o facto em si, mas o que ele representa junto a posição da consciência do salvo - <span class="bible-verse" data-ref="IPd. 3:21">IPd. 3:21</span></p>
+                </div>
+
+                <div class="lesson-part">
+                    <h3>7. Acto de Fé</h3>
+                    <p>É um acto de Fé para os que crêem - <span class="bible-verse" data-ref="At. 2:41-44">At. 2:41-44</span></p>
+                </div>
+
+                <!-- Elementos do Baptismo -->
+                <div class="bible-diagram">
+                    <div class="diagram-title">Elementos Intervenientes</div>
+                    <div class="baptism-elements">
+                        <div class="element-column">
+                            <h4>NA SALVAÇÃO</h4>
+                            <div class="element-item">
+                                <strong>PALAVRA</strong> - <span class="bible-verse" data-ref="Rm. 10:17">Rm. 10:17</span>
+                            </div>
+                            <div class="element-item">
+                                <strong>O HOMEM</strong> - <span class="bible-verse" data-ref="Jo. 3:16">Jo. 3:16</span>
+                            </div>
+                            <div class="element-item">
+                                <strong>O ESPIRITO SANTO</strong> - <span class="bible-verse" data-ref="Jo. 16:8">Jo. 16:8</span>
+                            </div>
+                        </div>
+                        <div class="element-column">
+                            <h4>NO BAPTISMO</h4>
+                            <div class="element-item">
+                                <strong>A ÁGUA</strong> - <span class="bible-verse" data-ref="At. 8:38">At. 8:38</span>
+                            </div>
+                            <div class="element-item">
+                                <strong>O MINISTRO</strong> - <span class="bible-verse" data-ref="At. 8:38">At. 8:38</span>
+                            </div>
+                            <div class="element-item">
+                                <strong>O CRENTE</strong> - <span class="bible-verse" data-ref="Mc. 16:16">Mc. 16:16</span>
+                            </div>
+                            <div class="element-item">
+                                <strong>A PALAVRA</strong> - <span class="bible-verse" data-ref="Mc. 16:16">Mc. 16:16</span> / <span class="bible-verse" data-ref="At. 2:38">At. 2:38</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="attention-box">
+                    <p><strong>Muitas pessoas entendem mal o significado do baptismo.</strong> A palavra "baptismo" significa imergir.</p>
+                    <p><strong>Baptismo é maneira bíblica de proclamar publicamente sua nova Fé em Cristo e seu compromisso de segui-lo.</strong></p>
+                    <p>"E o acto de ser imergido nas águas ilustra ser sepultado com Cristo. A acção de sair das águas é um retrato de ressurreição de cristo."</p>
+                    <p><strong>Ser baptizado é identificar-se com a morte, sepultamento, ressurreição de Jesus (Rm. 6:3-4).</strong></p>
+                    <p><strong>Baptismo não o salva. Baptismo não lava seus pecados, baptismo é um simples passo de obediência e uma proclamação pública de sua Fé em Cristo para a salvação.</strong></p>
+                    <p><strong>Importância: Baptismo é importante porque é um passo de obediência publicamente declarando sua Fé em Cristo e seu compromisso com Ele.</strong></p>
+                </div>
+
+                <div class="lesson-actions">
+                    <button class="btn btn-secondary" onclick="loadLesson(14)">
+                        <i class="fas fa-arrow-left"></i> Lição Anterior
+                    </button>
+                    <button class="btn btn-secondary" onclick="markLessonCompleted(15)">
+                        <i class="fas fa-check"></i> Marcar como Concluída
+                    </button>
+                    <button class="btn btn-primary" onclick="loadLesson(16)">
+                        Próxima Lição <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lição 16 - NOVA -->
+        <section class="lesson-section" id="lesson16">
+            <div class="lesson-header">
+                <h2><i class="fas fa-wine-glass-alt"></i> Lição 16: A Ceia do Senhor</h2>
+                <div class="lesson-meta">
+                    <span class="bible-refs"><i class="fas fa-bible"></i> 20 referências</span>
+                    <span class="duration"><i class="far fa-clock"></i> 45 min</span>
+                </div>
+            </div>
+
+            <div class="lesson-content">
+                <div class="lesson-part">
+                    <h3>1. Segunda ordenança</h3>
+                    <p>Esta é a segunda ordenança dada pelo Senhor Jesus à sua Igreja. Logo após o baptismo nas águas.</p>
+                </div>
+
+                <div class="lesson-part">
+                    <h3>2. A ordem principal</h3>
+                    <p>A ordem de mais ênfase dada por Ceia é: "FAZEI ISTO EM MEMÓRIA DE MIM".</p>
+                    <p><span class="bible-verse" data-ref="ICo. 11:24">ICo. 11:24</span> / <span class="bible-verse" data-ref="Lc. 22:19-20">Lc. 22:19-20</span></p>
+                    <p>"Em memória de mim" não significa somente relembrar um facto ocorrido no passado, uma simples lembrança (em gr. Anamnêses). É, pelo contrário, transportar uma acção do passado para hoje, de tal maneira que ela não perca a sua vitalidade e poder originais.</p>
+                </div>
+
+                <div class="lesson-part">
+                    <h3>3. Símbolos da Ceia</h3>
+                    <p>O pão e o vinho na Ceia são símbolos apenas do Corpo e do Sangue de Jesus e por isso muito importantes. Não tem fundamento bíblico o ensino (transubstanciação) que diz que o pão e o vinho se transformam literalmente na carne e no sangue do senhor depois de abençoados concerteza que o Cristo está presente em espírito na Ceia, assim como em todo o ajuntamento de seu povo: "onde estiveram dois ou três..."</p>
+                </div>
+
+                <div class="lesson-part">
+                    <h3>4. Quem pode tomar a Ceia?</h3>
+                    <p>Todo o salvo, em comunhão com a Igreja, depois de ensinados. <span class="bible-verse" data-ref="Mc. 16:15-16">Mc. 16:15-16</span>. <span class="bible-verse" data-ref="Mt. 28:19">Mt. 28:19</span></p>
+                </div>
+
+                <div class="lesson-part">
+                    <h3>5. Quem não deve tomar a Ceia?</h3>
+                    <p>O não salvo e o crente que por sua conduta demostra que não tem discernimentos do que é a Igreja do Senhor e de como se deve andar nela.</p>
+                </div>
+
+                <div class="lesson-part">
+                    <h3>6. As três lembranças da Ceia</h3>
+                    <div class="lord-supper-timeline">
+                        <div class="timeline-item past">
+                            <h4>6.1. PASSADO</h4>
+                            <p>"Fazer isto em memória de mim" - <span class="bible-verse" data-ref="ICo. 11:24">ICo. 11:24</span></p>
+                            <p>Lembrando a sua morte na cruz a 2000 anos, seu sangue vertido e seu corpo ferido, todo o seu sacrifício para salvar ainda hoje, nossas almas e curar nossas enfermidades.</p>
+                            <p><span class="bible-verse" data-ref="Is. 53:4-5">Is. 53:4-5</span>, <span class="bible-verse" data-ref="Is. 53:11">11</span></p>
+                        </div>
+                        <div class="timeline-item present">
+                            <h4>6.2. PRESENTE</h4>
+                            <p>"Examine-se o homem a si mesmo" - <span class="bible-verse" data-ref="ICo. 11:28">ICo. 11:28</span></p>
+                            <p>Hoje, na presença da mesa do Senhor e na comunhão preciosa dos santos, devemos nos examinar, nossas mentes, nossas acções e quando estiver em nós a possibilidade, devemos nos reconciliar com Deus e uns com os outros.</p>
+                            <p><span class="bible-verse" data-ref="Mt. 5:23-24">Mt. 5:23-24</span> / <span class="bible-verse" data-ref="IICo. 5:20">IICo. 5:20</span></p>
+                        </div>
+                        <div class="timeline-item future">
+                            <h4>6.3. FUTURO</h4>
+                            <p>"Até que ele venha" - <span class="bible-verse" data-ref="ICo. 11:26">ICo. 11:26</span></p>
+                            <p>Esta é a nossa esperança, que o mesmo Cristo que morreu e ressuscitou, virá um dia buscar a sua Igreja. Isto deve ser lembrado com gozo diante da mesa do Senhor.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-part">
+                    <h3>Resumo - Na Mesa do Senhor encontramos:</h3>
+                    <div class="bible-list">
+                        <p><strong>a)</strong> Respostas para o passado: Éramos pecadores mas a sua morte nos resgatou da escravidão do pecado - <span class="bible-verse" data-ref="Gl. 5:1">Gl. 5:1</span></p>
+                        <p><strong>b)</strong> Respostas para o presente: como filho de Deus devemos buscar comunhão do corpo para que não haja falta alguma na Igreja, nem emocional, nem física, nem espiritual - <span class="bible-verse" data-ref="Sl. 34:9">Sl. 34:9</span> / <span class="bible-verse" data-ref="Sl. 133">133</span></p>
+                        <p><strong>c)</strong> Resposta para o futuro: se formos fieis até ao fim, a eternidade nos espera - <span class="bible-verse" data-ref="Ap. 2:10">Ap. 2:10</span></p>
+                    </div>
+                </div>
+
+                <div class="attention-box">
+                    <p><strong>A Ceia do Senhor sem este componente de memória torna-se vazio.</strong> "Nossa esperança é sua vida", diz o antigo hino.</p>
+                    <p><strong>Viveça: "Se esperamos em Deus só nesta vida somos miseráveis de todos os homens".</strong></p>
+                </div>
+
+                <div class="lesson-actions">
+                    <button class="btn btn-secondary" onclick="loadLesson(15)">
+                        <i class="fas fa-arrow-left"></i> Lição Anterior
+                    </button>
+                    <button class="btn btn-secondary" onclick="markLessonCompleted(16)">
+                        <i class="fas fa-check"></i> Marcar como Concluída
+                    </button>
+                    <button class="btn btn-primary" onclick="loadLesson(17)">
+                        Próxima Lição <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lição 17 - NOVA -->
+        <section class="lesson-section" id="lesson17">
+            <div class="lesson-header">
+                <h2><i class="fas fa-praying-hands"></i> Lição 17: O Jejum</h2>
+                <div class="lesson-meta">
+                    <span class="bible-refs"><i class="fas fa-bible"></i> 20 referências</span>
+                    <span class="duration"><i class="far fa-clock"></i> 35 min</span>
+                </div>
+            </div>
+
+            <div class="lesson-content">
+                <div class="lesson-part">
+                    <h3>1. O espírito explicado</h3>
+                    <p><span class="bible-verse" data-ref="Is. 58:6-7">Is. 58:6-7</span></p>
+                </div>
+
+                <div class="lesson-part">
+                    <h3>2. Não deve servir para a exibição</h3>
+                    <p><span class="bible-verse" data-ref="Mt. 6:16-18">Mt. 6:16-18</span></p>
+                </div>
+
+                <div class="lesson-part">
+                    <h3>3. Deve ser para Deus</h3>
+                    <p><span class="bible-verse" data-ref="Zc. 7:5">Zc. 7:5</span> e <span class="bible-verse" data-ref="Mt. 6:18">Mt. 6:18</span></p>
+                </div>
+
+                <div class="lesson-part">
+                    <h3>4. Para o "castigo" da alma e humilhação</h3>
+                    <p><span class="bible-verse" data-ref="Sl. 69:10">Sl. 69:10</span> e <span class="bible-verse" data-ref="Sl. 35:13">Sl. 35:13</span></p>
+                </div>
+
+                <div class="lesson-part">
+                    <h3>5. Deverá ser observado em ocasiões de:</h3>
+                    <div class="fasting-occasions">
+                        <div class="occasion-item">
+                            <strong>a)</strong> Juízos de Deus - <span class="bible-verse" data-ref="Jl. 1:14">Jl. 1:14</span> e <span class="bible-verse" data-ref="Jl. 2:12">Jl. 2:12</span>
+                        </div>
+                        <div class="occasion-item">
+                            <strong>b)</strong> Calamidades públicas - <span class="bible-verse" data-ref="Lm. 11:12">Lm. 11:12</span>
+                        </div>
+                        <div class="occasion-item">
+                            <strong>c)</strong> Aflição da Igreja - <span class="bible-verse" data-ref="Lc. 5:33-35">Lc. 5:33-35</span> / <span class="bible-verse" data-ref="Mt. 17:21">Mt. 17:21</span>
+                        </div>
+                        <div class="occasion-item">
+                            <strong>d)</strong> Aflição alheia - <span class="bible-verse" data-ref="Sl. 35:13">Sl. 35:13</span> e <span class="bible-verse" data-ref="Dn. 6:18">Dn. 6:18</span>
+                        </div>
+                        <div class="occasion-item">
+                            <strong>e)</strong> Aflições pessoais - <span class="bible-verse" data-ref="IISm. 12:16">IISm. 12:16</span>
+                        </div>
+                        <div class="occasion-item">
+                            <strong>f)</strong> Aproximação do perigo - <span class="bible-verse" data-ref="Et. 4:16">Et. 4:16</span>
+                        </div>
+                        <div class="occasion-item">
+                            <strong>g)</strong> Ordenação de ministros - <span class="bible-verse" data-ref="At. 13:3">At. 13:3</span> / <span class="bible-verse" data-ref="At. 4:23">At. 4:23</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-part">
+                    <h3>6. Devemos ser acompanhado por:</h3>
+                    <div class="bible-list">
+                        <p><strong>a)</strong> Oração - <span class="bible-verse" data-ref="Ed. 8:23">Ed. 8:23</span> / <span class="bible-verse" data-ref="Dn. 9:3">Dn. 9:3</span></p>
+                        <p><strong>b)</strong> Confissão de pecados - <span class="bible-verse" data-ref="ISm. 7:6">ISm. 7:6</span> / <span class="bible-verse" data-ref="Ne. 9:1-2">Ne. 9:1-2</span></p>
+                        <p><strong>c)</strong> Lamentação - <span class="bible-verse" data-ref="Jl. 2:12">Jl. 2:12</span></p>
+                        <p><strong>d)</strong> Humilhação - <span class="bible-verse" data-ref="Dt. 9:18">Dt. 9:18</span> / <span class="bible-verse" data-ref="Ne. 9:1">Ne. 9:1</span></p>
+                    </div>
+                </div>
+
+                <div class="lesson-part">
+                    <h3>7. Deus o pode rejeitar</h3>
+                    <p><span class="bible-verse" data-ref="Is. 58:3">Is. 58:3</span> / <span class="bible-verse" data-ref="Jr. 14:12">Jr. 14:12</span></p>
+                </div>
+
+                <div class="lesson-part">
+                    <h3>8. Promessas ligados ao jejum</h3>
+                    <p><span class="bible-verse" data-ref="Is. 58:8-12">Is. 58:8-12</span> / <span class="bible-verse" data-ref="Mt. 6:18">Mt. 6:18</span></p>
+                </div>
+
+                <div class="lesson-part">
+                    <h3>9. Sensibilidade espiritual</h3>
+                    <p>O jejum torna o crente mais sensível a voz do Espírito Santo.</p>
+                    <p>Pode se estender isso porque o corpo (a carne) esta em fraqueza, seus sentidos estão como subjugados, ai nosso espírito fica com maior sensibilidade.</p>
+                </div>
+
+                <div class="lesson-part">
+                    <h3>10. Jejum com obras de amor</h3>
+                    <p>Deus mostra tanto em <span class="bible-verse" data-ref="Is. 58:6-7">Is. 58:6-7</span> como em <span class="bible-verse" data-ref="Zc. 7:8-10">Zc. 7:8-10</span> Que o jejum se torna valioso quando acompanhado de obras de amor pelo próximo, arrependimento e uma conduta recta diante de Deus.</p>
+                </div>
+
+                <div class="attention-box">
+                    <p><strong>O IMPORTANTE A GUARDAR NO JEJUM É: PARA QUEM ESTAMOS FAZENDO E NÃO SOMENTE PORQUE O FAZEMOS.</strong></p>
+                    <p><span class="bible-verse" data-ref="Zc. 7:5-6">Zc. 7:5-6</span> / <span class="bible-verse" data-ref="Is. 58:3">Is. 58:3</span></p>
+                </div>
+
+                <div class="lesson-actions">
+                    <button class="btn btn-secondary" onclick="loadLesson(16)">
+                        <i class="fas fa-arrow-left"></i> Lição Anterior
+                    </button>
+                    <button class="btn btn-secondary" onclick="markLessonCompleted(17)">
+                        <i class="fas fa-check"></i> Marcar como Concluída
+                    </button>
+                    <button class="btn btn-primary" onclick="loadLesson(18)">
+                        Próxima Lição <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lição 18 - NOVA -->
+        <section class="lesson-section" id="lesson18">
+            <div class="lesson-header">
+                <h2><i class="fas fa-gavel"></i> Lição 18: Disciplina na Igreja</h2>
+                <div class="lesson-meta">
+                    <span class="bible-refs"><i class="fas fa-bible"></i> 18 referências</span>
+                    <span class="duration"><i class="far fa-clock"></i> 40 min</span>
+                </div>
+            </div>
+
+            <div class="lesson-content">
+                <div class="lesson-part">
+                    <h3>1. OBJECTIVO DA DISCIPLINA</h3>
+                    <div class="bible-list">
+                        <p><strong>a)</strong> Trazer ordem a igreja do Senhor - <span class="bible-verse" data-ref="ICo. 14:40">ICo. 14:40</span></p>
+                        <p><strong>b)</strong> Trazer correção aos faltosos - <span class="bible-verse" data-ref="Hb. 12:7">Hb. 12:7</span></p>
+                        <p><strong>c)</strong> Trazer temor ao Senhor - <span class="bible-verse" data-ref="At. 5:11">At. 5:11</span></p>
+                        <p><strong>d)</strong> Manter a regra de vida na Igreja - <span class="bible-verse" data-ref="IICo. 10:15">IICo. 10:15</span> / <span class="bible-verse" data-ref="Gl. 6:16">Gl. 6:16</span> / <span class="bible-verse" data-ref="Fp. 3:16">Fp. 3:16</span></p>
+                    </div>
+                </div>
+
+                <div class="lesson-part">
+                    <h3>2. COMO APLICÁ-LA?</h3>
+                    <div class="bible-list">
+                        <p><strong>a)</strong> Com amor - <span class="bible-verse" data-ref="Hb. 12:6">Hb. 12:6</span> / <span class="bible-verse" data-ref="IICo. 2:7-8">IICo. 2:7-8</span></p>
+                        <p><strong>b)</strong> Com autoridade - <span class="bible-verse" data-ref="Tt. 2:15">Tt. 2:15</span></p>
+                        <p><strong>c)</strong> Biblicamente - só quando a disciplina é aplicada com base na palavra de Deus traz bons resultados na vida da igreja - <span class="bible-verse" data-ref="Mt. 18:15-17">Mt. 18:15-17</span></p>
+                        <p><strong>d)</strong> Com supervisão - não se pode disciplinar e abandonar o disciplinado para que sozinho resolva o que fazer. Deverá ser acompanhado por crentes de confiança e de oração para que o irmão não se perca - <span class="bible-verse" data-ref="ICo. 12:25">ICo. 12:25</span></p>
+                        <p><strong>e)</strong> Sem nunca considerar o faltoso inimigo - <span class="bible-verse" data-ref="IITs. 3:15">IITs. 3:15</span></p>
+                    </div>
+                </div>
+
+                <div class="lesson-part">
+                    <h3>3. QUEM DEVE APLICAR A DISCIPLINA?</h3>
+                    <p>A disciplina na igreja deve ser sempre, e só, aplicada pelo pastorado da Igreja - <span class="bible-verse" data-ref="At. 5:1-3">At. 5:1-3</span>, <span class="bible-verse" data-ref="At. 5:9">9</span> <span class="bible-verse" data-ref="At. 15:2">At. 15:2</span>, <span class="bible-verse" data-ref="At. 15:23-29">23-29</span>.</p>
+                    <p>A chamada de atenção de um erro poderá ser feita pelos membros, uns aos outros, mas a aplicação de disciplina, somente pelo pastor.</p>
+                </div>
+
+                <div class="lesson-part">
+                    <h3>4. PASSOS PARA A APLICAÇÃO DA DISCIPLINA</h3>
+                    <div class="discipline-steps">
+                        <div class="step-item">
+                            <h4>a) Primeira chamada de atenção</h4>
+                            <p>Irmão com irmão - <span class="bible-verse" data-ref="Mt. 18:15">Mt. 18:15</span></p>
+                        </div>
+                        <div class="step-item">
+                            <h4>b) Segunda chamada de atenção</h4>
+                            <p>Mas um ou dois irmãos como testemunho - <span class="bible-verse" data-ref="Mt. 18:16">Mt. 18:16</span></p>
+                        </div>
+                        <div class="step-item">
+                            <h4>c) Terceira chamada de atenção</h4>
+                            <p>"dize-o á Igreja" - <span class="bible-verse" data-ref="Mt. 18:17">Mt. 18:17</span>. Deve se entender aqui que chegou o momento de se trazer o assunto ao pastor, pois é ele que tem a responsabilidade espiritual pelo povo de Deus da igreja local. <span class="bible-verse" data-ref="Hb. 13:17">Hb. 13:17</span>. É o pastor que tem a autoridade de levar o membro que não se quer arrepender a Igreja, e mais ninguém.</p>
+                        </div>
+                        <div class="step-item">
+                            <h4>d) Decisão da disciplina</h4>
+                            <p>A partir da terceira chamada de atenção, se não houver arrependimento o pastorado da Igreja, concerteza com o conselho do ministério, tomará a decisão da disciplina a ser aplicada. Desde a suspensão de actividades ate ao corte de comunhão por pecado prejudicial e conhecido pela Igreja.</p>
+                        </div>
+                        <div class="step-item">
+                            <h4>e) Quando o pastor está em falta</h4>
+                            <p>(pecado ou aparência do mal) conhecido por qualquer membro da Igreja, este deverá entregar a questão ao outro pastor que tentará recuperar seu colega de ministério. No caso de não se arrepender, o caminho bíblico será de os levar aos restantes membros do presbitério (ministério) com testemunhas (ex: o membro inicial) para aí ser chamado atenção para a sua recuperação passando por disciplina, ou mesmo corte de comunhão, o que será posteriormente anunciado a Igreja - <span class="bible-verse" data-ref="ITm. 5:19-20">ITm. 5:19-20</span>.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-actions">
+                    <button class="btn btn-secondary" onclick="loadLesson(17)">
+                        <i class="fas fa-arrow-left"></i> Lição Anterior
+                    </button>
+                    <button class="btn btn-secondary" onclick="markLessonCompleted(18)">
+                        <i class="fas fa-check"></i> Marcar como Concluída
+                    </button>
+                    <button class="btn btn-primary" onclick="loadLesson(19)">
+                        Próxima Lição <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lição 19 - NOVA -->
+        <section class="lesson-section" id="lesson19">
+            <div class="lesson-header">
+                <h2><i class="fas fa-user-tie"></i> Lição 19: O Essencial - Conduta do Membro da Igreja</h2>
+                <div class="lesson-meta">
+                    <span class="bible-refs"><i class="fas fa-bible"></i> 10 referências</span>
+                    <span class="duration"><i class="far fa-clock"></i> 35 min</span>
+                </div>
+            </div>
+
+            <div class="lesson-content">
+                <div class="conduct-section">
+                    <h3>1. SEU FALAR</h3>
+                    <p><span class="bible-verse" data-ref="Tt. 2:8">Tt. 2:8</span> / <span class="bible-verse" data-ref="Tt. 3:2">Tt. 3:2</span></p>
+                    <div class="conduct-list">
+                        <p>✓ Deverá ser temperado, amistoso e cordial;</p>
+                        <p>✓ Não deve insultar os irmãos em nenhuma circunstância;</p>
+                        <p>✓ Deverá sempre saudar os irmãos com palavras de amor;</p>
+                        <p>✓ Não deverá usar calão para se expressar;</p>
+                        <p>✓ Linguagem idônea, mesmo que seja com humor, em vez de anedotas ou sugestivas e chocarrices;</p>
+                        <p>✓ Nenhuma murmuração.</p>
+                    </div>
+                </div>
+
+                <div class="conduct-section">
+                    <h3>2. SEU TRAJAR E ENFEITAR</h3>
+                    <p><span class="bible-verse" data-ref="ITm. 2:9">ITm. 2:9</span> / <span class="bible-verse" data-ref="IPd. 3:3-5">IPd. 3:3-5</span></p>
+                    
+                    <h4>"Com honestidade"</h4>
+                    <p>Significa de forma compatível com o que ganha sem precisar recorrer a formas ilícitas (negócios ilegais) para se trajar. Também não deve viver para se vestir, de forma a que o que chama a atenção das pessoas não seja o seu traje mas seu carácter e conduta.</p>
+                    <p>Que nenhum irmão e irmã sejam conhecidos por aquilo que vestem, mais mas por aquilo que são em Cristo.</p>
+
+                    <h4>"Com moderação"</h4>
+                    <p>Significa com equilíbrio. Não precisa seguir a moda mesmo quando ela é desequilibrada, só porque "está na moda". O crente deve procurar a "sua forma de vestir em consciência espiritual manter o equilíbrio. Sem ostentação.</p>
+
+                    <h4>"Com pudor"</h4>
+                    <p>Todos conhecem a forma de como vestir para atrair o olhar do sexo oposto. Todos sabem também quando o decote, a saia, o vestido, a blusa, ou a calca estão ou não em condição de cobrir o que deve ser coberto, afinal foi para isso também que foram confeccionados. Quando digo cobrir me refiro a forma correta de cobrir, pois afinal existe também uma cobertura sugestiva, que mais parece estar descoberto.</p>
+                    <p>O cobrir demais não significa que está certo, assim como o descobrir demais não está.</p>
+                    <p>A moda actual caminha a passos largos para o nudismo, para a maior transparência dos tecidos, para a revelação mas exposta das formas corporais, só que nós (os salvos) sabemos que esta situação foi abolida pelo próprio homem quando pecou. Ele mesmo se cobriu e descobriu que a sua nudez deverá ser coberta, Deus só apareceu para ajudar e revelar uma verdade espiritual.</p>
+                    <p>Isso não mudou até nossos dias, nem mudará nunca. O corpo humano descoberto será sempre uma referência para o despoletar de desejos carnais, prostituição e adultério que começam na mente. A mente humana não melhorou nestes aspectos nos últimos quatro mil anos, existem provas que piorou, está mais depravada.</p>
+
+                    <h4>"O enfeite não seja" <span class="bible-verse" data-ref="IPd. 3:3-4">IPd. 3:3-4</span></h4>
+                    <p>Entende-se que Pedro está levantando uma questão de prioridades e valores essências da vida cristã em vez de proibições (vrs. 3,4). Ele está dizendo que o mais importante é o "incorrupúvel trajo de um espírito manso e quieto" em vez de uma preocupação fora de prioridade com adornos exteriores.</p>
+                    <p>De forma que, Pedro, não condena que as mulheres desejam realçar sua aparência pessoal, está sim, lembrando, que nenhum enfeite exterior pode substituir uma graciosa personalidade cristã que é o que verdadeiramente conta para Deus.</p>
+                    <p>Concerteza que para os enfeites e adornos, as mesmas palavras sobre modéstia, honestidade, pudor e equilíbrio, já referidas para o traje, se adaptam.</p>
+                </div>
+
+                <div class="lesson-actions">
+                    <button class="btn btn-secondary" onclick="loadLesson(18)">
+                        <i class="fas fa-arrow-left"></i> Lição Anterior
+                    </button>
+                    <button class="btn btn-secondary" onclick="markLessonCompleted(19)">
+                        <i class="fas fa-check"></i> Marcar como Concluída
+                    </button>
+                    <button class="btn btn-primary" onclick="loadLesson(20)">
+                        Próxima Lição <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lição 20 - NOVA -->
+        <section class="lesson-section" id="lesson20">
+            <div class="lesson-header">
+                <h2><i class="fas fa-cloud-arrow-up"></i> Lição 20: Escatologia</h2>
+                <div class="lesson-meta">
+                    <span class="bible-refs"><i class="fas fa-bible"></i> 25 referências</span>
+                    <span class="duration"><i class="far fa-clock"></i> 50 min</span>
+                </div>
+            </div>
+
+            <div class="lesson-content">
+                <div class="lesson-part">
+                    <h3>Definição</h3>
+                    <p>Coisas que acontecerão nos últimos dias, no mundo e com igreja</p>
+                </div>
+
+                <div class="lesson-part">
+                    <h3>1. Arrebatamento dos salvos</h3>
+                    <div class="bible-list">
+                        <p><strong>a)</strong> Entre nuvens - <span class="bible-verse" data-ref="Mt. 24:30">Mt. 24:30</span> / <span class="bible-verse" data-ref="Mt. 26:64">Mt. 26:64</span></p>
+                        <p><strong>b)</strong> Subitamente - <span class="bible-verse" data-ref="Mc. 13:36">Mc. 13:36</span></p>
+                        <p><strong>c)</strong> Inesperadamente - <span class="bible-verse" data-ref="Mt. 24:44">Mt. 24:44</span> / <span class="bible-verse" data-ref="Lc. 12:40">Lc. 12:40</span></p>
+                        <p><strong>d)</strong> Os mortos em Cristo ressuscitarão - <span class="bible-verse" data-ref="ITs. 4:16">ITs. 4:16</span></p>
+                        <p><strong>e)</strong> Os santos vivos serão arrebatados - <span class="bible-verse" data-ref="ITs. 4:17">ITs. 4:17</span></p>
+                    </div>
+                </div>
+
+                <div class="lesson-part">
+                    <h3>2. As bodas do cordeiro</h3>
+                    <p><span class="bible-verse" data-ref="Ap. 19:7">Ap. 19:7</span></p>
+                </div>
+
+                <div class="lesson-part">
+                    <h3>3. Julgamento das nações</h3>
+                    <p><span class="bible-verse" data-ref="Mt. 25:31">Mt. 25:31</span>, <span class="bible-verse" data-ref="Mt. 25:46">46</span> / <span class="bible-verse" data-ref="Ap. 20:11-15">Ap. 20:11-15</span></p>
+                </div>
+
+                <div class="lesson-part">
+                    <h3>4. Milénio</h3>
+                    <p><span class="bible-verse" data-ref="Ap. 21:24">Ap. 21:24</span> / <span class="bible-verse" data-ref="Mt. 25:46">Mt. 25:46</span></p>
+                </div>
+
+                <div class="lesson-part">
+                    <h3>5. Juízo final</h3>
+                    <p><span class="bible-verse" data-ref="Ap. 20:11-15">Ap. 20:11-15</span></p>
+                </div>
+
+                <div class="lesson-part">
+                    <h3>6. O reino de Deus</h3>
+                    <p><span class="bible-verse" data-ref="Sl. 90:2">Sl. 90:2</span> / <span class="bible-verse" data-ref="Gl. 4:26">Gl. 4:26</span></p>
+                </div>
+
+                <div class="lesson-part">
+                    <h3>7. TRIBUNAL DE CRISTO</h3>
+                    <p><span class="bible-verse" data-ref="ICo. 3:11-15">ICo. 3:11-15</span> / <span class="bible-verse" data-ref="IICo. 5:10">IICo. 5:10</span></p>
+                </div>
+
+                <div class="lesson-part">
+                    <h3>8. BODAS DO CORDEIRO</h3>
+                    <p><span class="bible-verse" data-ref="Ap. 19:1-10">Ap. 19:1-10</span></p>
+                </div>
+
+                <!-- Diagrama Escatológico -->
+                <div class="bible-diagram">
+                    <div class="diagram-title">Linha do Tempo Escatológica</div>
+                    <div class="eschatology-chart">
+                        <div class="eschatology-item" style="background: #e8f4fd;">
+                            <h4>ARREBATAMENTO</h4>
+                            <p>dos SALVOS</p>
+                            <p><span class="bible-verse" data-ref="ITs. 4:16-17">ITs. 4:16-17</span></p>
+                        </div>
+                        <div class="eschatology-item" style="background: #fff3cd;">
+                            <h4>GRANDE TRIBULAÇÃO</h4>
+                            <p><span class="bible-verse" data-ref="Mt. 24:9-14">Mt. 24:9-14</span></p>
+                        </div>
+                        <div class="eschatology-item" style="background: #d4edda;">
+                            <h4>BODAS DO CORDEIRO</h4>
+                            <p><span class="bible-verse" data-ref="Ap. 19:1-10">Ap. 19:1-10</span></p>
+                        </div>
+                        <div class="eschatology-item" style="background: #e8f4fd;">
+                            <h4>MILÊNIO</h4>
+                            <p><span class="bible-verse" data-ref="Is. 11:6-9">Is. 11:6-9</span></p>
+                        </div>
+                        <div class="eschatology-item" style="background: #fff3cd;">
+                            <h4>JULGAMENTO FINAL</h4>
+                            <p><span class="bible-verse" data-ref="Ap. 20:11-14">Ap. 20:11-14</span></p>
+                        </div>
+                        <div class="eschatology-item" style="background: #d4edda;">
+                            <h4>NOVOS CÉUS NOVA TERRA</h4>
+                            <p><span class="bible-verse" data-ref="Ap. 21:1-8">Ap. 21:1-8</span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="attention-box">
+                    <p><strong>Crentes na eternidade com Deus</strong></p>
+                </div>
+
+                <div class="lesson-actions">
+                    <button class="btn btn-secondary" onclick="loadLesson(19)">
+                        <i class="fas fa-arrow-left"></i> Lição Anterior
+                    </button>
+                    <button class="btn btn-secondary" onclick="markLessonCompleted(20)">
+                        <i class="fas fa-check"></i> Marcar como Concluída
+                    </button>
+                    <button class="btn btn-primary" onclick="loadLesson(14)">
+                        Recomeçar Classe <i class="fas fa-redo"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Navegação entre lições -->
+        <section class="lessons-navigation">
+            <h3>Navegar entre Lições da Classe IV</h3>
+            <div class="nav-buttons">
+                <button class="nav-btn" onclick="loadLesson(14)">Lição 14</button>
+                <button class="nav-btn" onclick="loadLesson(15)">Lição 15</button>
+                <button class="nav-btn" onclick="loadLesson(16)">Lição 16</button>
+                <button class="nav-btn" onclick="loadLesson(17)">Lição 17</button>
+                <button class="nav-btn" onclick="loadLesson(18)">Lição 18</button>
+                <button class="nav-btn" onclick="loadLesson(19)">Lição 19</button>
+                <button class="nav-btn" onclick="loadLesson(20)">Lição 20</button>
+            </div>
+        </section>
+    </div>
+
+    <!-- Botão Voltar ao Topo -->
+    <button id="goTopBtn" class="go-top-btn" title="Voltar ao Topo">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Tooltip para versículos -->
+    <div id="bibleTooltip" class="bible-tooltip"></div>
+
+    <footer>
+        <p>Igreja Evangélica Assembleia de Deus da Baixa - Congregação de Ndiavela</p>
+        <p>Classe IV - Vida na Igreja</p>
+        <div class="footer-links">
+            <a href="class3.html"><i class="fas fa-arrow-left"></i> Classe Anterior</a> |
+            <a href="index.html"><i class="fas fa-home"></i> Página Inicial</a>
+        </div>
+    </footer>
+
+    <script src="bible-data.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // Funções específicas para class4.html
+        function loadLesson(lessonNumber) {
+            document.querySelectorAll('.lesson-section').forEach(lesson => {
+                lesson.classList.remove('active');
+            });
+            
+            const selectedLesson = document.getElementById(`lesson${lessonNumber}`);
+            if (selectedLesson) {
+                selectedLesson.classList.add('active');
+                selectedLesson.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        function markLessonCompleted(lessonNumber) {
+            const completedLessons = JSON.parse(localStorage.getItem('completedLessons') || '[]');
+            if (!completedLessons.includes(lessonNumber.toString())) {
+                completedLessons.push(lessonNumber.toString());
+                localStorage.setItem('completedLessons', JSON.stringify(completedLessons));
+                alert(`Lição ${lessonNumber} marcada como concluída!`);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            loadLesson(14);
+            initializeBibleVerses();
+        });
+    </script>
+</body>
+</html>

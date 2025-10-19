@@ -1,0 +1,1254 @@
+/* style.css - CSS Completo para a Apostila de Batismo */
+
+:root {
+    --primary-blue: #1E3A8A;
+    --secondary-blue: #2563EB;
+    --accent-gold: #D4AF37;
+    --light-gold: #F7E98E;
+    --white: #FFFFFF;
+    --light-gray: #F8FAFC;
+    --dark-gray: #1E293B;
+    --text-color: #334155;
+    --success: #10B981;
+    --warning: #F59E0B;
+    --error: #EF4444;
+    --border-radius: 8px;
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background: linear-gradient(135deg, var(--light-gray) 0%, #E2E8F0 100%);
+    min-height: 100vh;
+}
+
+/* Header Styles */
+header {
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+    color: var(--white);
+    padding: 1.5rem;
+    text-align: center;
+    position: relative;
+    box-shadow: var(--shadow);
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.church-info h1 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.subtitle {
+    font-style: italic;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.header-decoration {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0.5rem 0;
+}
+
+.cross {
+    width: 20px;
+    height: 30px;
+    background-color: var(--accent-gold);
+    position: relative;
+    margin: 0 10px;
+}
+
+.cross:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 20px;
+    height: 30px;
+    background-color: var(--accent-gold);
+    transform: translateX(-50%) rotate(90deg);
+}
+
+.dove {
+    color: var(--accent-gold);
+    font-size: 1.5rem;
+    margin: 0 15px;
+}
+
+header h2 {
+    font-size: 1.5rem;
+    margin: 1rem 0;
+    color: var(--light-gold);
+}
+
+.editor, .year {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Hamburger Menu */
+.hamburger-menu {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+}
+
+.hamburger-icon {
+    width: 30px;
+    height: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.hamburger-icon span {
+    height: 3px;
+    width: 100%;
+    background-color: var(--white);
+    border-radius: 2px;
+    transition: var(--transition);
+}
+
+.hamburger-icon.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger-icon.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-icon.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+}
+
+.sidebar-nav {
+    position: fixed;
+    top: 0;
+    left: -300px;
+    width: 300px;
+    height: 100vh;
+    background: linear-gradient(to bottom, var(--primary-blue), var(--secondary-blue));
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    transition: var(--transition);
+    z-index: 999;
+    overflow-y: auto;
+}
+
+.sidebar-nav.active {
+    left: 0;
+}
+
+.sidebar-header {
+    padding: 1.5rem;
+    background-color: rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-header h3 {
+    color: var(--white);
+    font-size: 1.2rem;
+}
+
+.close-sidebar {
+    color: var(--white);
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.close-sidebar:hover {
+    color: var(--accent-gold);
+}
+
+.sidebar-menu {
+    list-style: none;
+    padding: 1rem 0;
+}
+
+.sidebar-menu li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.sidebar-menu li a {
+    display: flex;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    color: var(--white);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.sidebar-menu li a:hover,
+.sidebar-menu li a.active {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--accent-gold);
+}
+
+.sidebar-menu li a i {
+    margin-right: 10px;
+    width: 20px;
+    text-align: center;
+}
+
+.menu-divider {
+    padding: 0.5rem 1.5rem;
+    color: var(--light-gold);
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 1rem;
+}
+
+.sidebar-footer {
+    padding: 1.5rem;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: auto;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+}
+
+/* Main Content */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.section-header h2 {
+    color: var(--primary-blue);
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.section-header h2 i {
+    margin-right: 10px;
+    color: var(--accent-gold);
+}
+
+.section-header p {
+    color: var(--text-color);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Welcome Banner */
+.welcome-banner {
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    color: var(--white);
+    box-shadow: var(--shadow);
+}
+
+.banner-content {
+    display: flex;
+    align-items: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.banner-icon {
+    font-size: 3rem;
+    margin-right: 1.5rem;
+    color: var(--accent-gold);
+}
+
+.banner-text h2 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.banner-text p {
+    opacity: 0.9;
+    font-size: 1.1rem;
+}
+
+/* Progress Bar */
+.progress-container {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    margin: 1.5rem 0;
+    text-align: center;
+    backdrop-filter: blur(5px);
+}
+
+.progress-label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: var(--light-gold);
+}
+
+.progress-bar {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    height: 20px;
+    margin: 10px 0;
+    overflow: hidden;
+}
+
+.progress-fill {
+    background: linear-gradient(90deg, var(--accent-gold), var(--light-gold));
+    height: 100%;
+    border-radius: 10px;
+    transition: width 0.5s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-blue);
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.progress-stats {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Print Button */
+.print-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background-color: var(--accent-gold);
+    color: var(--primary-blue);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-weight: bold;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+}
+
+.print-btn:hover {
+    background-color: var(--light-gold);
+    transform: translateY(-2px);
+}
+
+.print-btn i {
+    margin-right: 5px;
+}
+
+/* Stats Section */
+.stats-section {
+    margin-bottom: 2rem;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.stat-card {
+    background-color: var(--white);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    border-top: 4px solid var(--accent-gold);
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+}
+
+.stat-card.clickable {
+    cursor: pointer;
+}
+
+.stat-card.clickable:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.stat-icon {
+    font-size: 2rem;
+    color: var(--primary-blue);
+    margin-bottom: 0.5rem;
+}
+
+.stat-number {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--primary-blue);
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    color: var(--text-color);
+    font-size: 0.9rem;
+}
+
+/* Quick Navigation */
+.quick-nav {
+    margin-bottom: 3rem;
+}
+
+.nav-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.nav-card {
+    background: linear-gradient(135deg, var(--white) 0%, #f8fafc 100%);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    cursor: pointer;
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-gold);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.nav-card i {
+    font-size: 2.5rem;
+    color: var(--primary-blue);
+    margin-bottom: 1rem;
+}
+
+.nav-card h3 {
+    color: var(--primary-blue);
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+}
+
+.nav-card p {
+    color: var(--text-color);
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.nav-badge {
+    background: var(--accent-gold);
+    color: var(--primary-blue);
+    padding: 0.3rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+/* All Lessons */
+.all-lessons {
+    margin-bottom: 3rem;
+}
+
+.lessons-grid {
+    display: grid;
+    gap: 2rem;
+}
+
+.lesson-group {
+    background: var(--white);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+}
+
+.group-title {
+    color: var(--primary-blue);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--light-gray);
+    font-size: 1.3rem;
+}
+
+.lesson-items {
+    display: grid;
+    gap: 0.5rem;
+}
+
+.lesson-item {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    background: var(--light-gray);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: var(--transition);
+    border-left: 4px solid transparent;
+}
+
+.lesson-item:hover {
+    background: #e2e8f0;
+    border-left-color: var(--accent-gold);
+    transform: translateX(5px);
+}
+
+.lesson-num {
+    background: var(--primary-blue);
+    color: var(--white);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    margin-right: 1rem;
+    flex-shrink: 0;
+}
+
+.lesson-name {
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+/* Back Button */
+.back-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    background: rgba(255,255,255,0.2);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: var(--border-radius);
+    margin-top: 1rem;
+    transition: var(--transition);
+}
+
+.back-btn:hover {
+    background: rgba(255,255,255,0.3);
+    color: var(--white);
+}
+
+.back-btn i {
+    margin-right: 0.5rem;
+}
+
+/* Lesson Sections */
+.lesson-section {
+    display: none;
+}
+
+.lesson-section.active {
+    display: block;
+}
+
+.lesson-content {
+    background-color: var(--white);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow);
+}
+
+.lesson-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--light-gray);
+}
+
+.lesson-header h2 {
+    color: var(--primary-blue);
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.lesson-meta {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+}
+
+.lesson-part {
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--light-gray);
+}
+
+.lesson-part:last-child {
+    border-bottom: none;
+}
+
+.lesson-part h3 {
+    color: var(--primary-blue);
+    margin-bottom: 1rem;
+}
+
+.sub-point {
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.sub-point h4 {
+    color: var(--secondary-blue);
+    margin-bottom: 0.5rem;
+}
+
+/* Steps List */
+.steps-list {
+    display: grid;
+    gap: 1rem;
+}
+
+.step-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.step-number {
+    background: var(--accent-gold);
+    color: var(--primary-blue);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    flex-shrink: 0;
+    margin-top: 0.2rem;
+}
+
+.step-content {
+    flex: 1;
+}
+
+/* Lists */
+.bible-list {
+    margin-left: 1rem;
+}
+
+.bible-list p {
+    margin-bottom: 0.5rem;
+}
+
+.review-list {
+    background: var(--light-gray);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    border-left: 4px solid var(--accent-gold);
+}
+
+.warning-list {
+    background: #fef2f2;
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    border-left: 4px solid var(--error);
+}
+
+.attention-box {
+    background: #fffbeb;
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    border-left: 4px solid var(--warning);
+    margin: 1rem 0;
+}
+
+/* Bible Verses */
+.bible-verse {
+    color: var(--secondary-blue);
+    cursor: pointer;
+    border-bottom: 1px dashed var(--secondary-blue);
+    transition: var(--transition);
+    position: relative;
+    padding: 0.1rem 0.2rem;
+    border-radius: 2px;
+}
+
+.bible-verse:hover {
+    background: rgba(37, 99, 235, 0.1);
+    border-bottom-style: solid;
+}
+
+.verse-ref {
+    color: var(--secondary-blue);
+    cursor: pointer;
+    font-weight: 500;
+}
+
+/* Diagrams */
+.diagram-section {
+    margin: 2rem 0;
+}
+
+.bible-diagram {
+    background: var(--light-gray);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    margin-bottom: 1.5rem;
+    border: 1px solid #e2e8f0;
+}
+
+.diagram-title {
+    font-weight: bold;
+    color: var(--primary-blue);
+    margin-bottom: 1rem;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+/* Salvation Path */
+.salvation-path {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.path-step {
+    background: var(--white);
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    text-align: center;
+    flex: 1;
+    margin: 0 0.5rem;
+    box-shadow: var(--shadow);
+    min-width: 120px;
+}
+
+.path-step strong {
+    color: var(--primary-blue);
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.path-arrow {
+    font-size: 1.5rem;
+    color: var(--accent-gold);
+    font-weight: bold;
+}
+
+/* Control Diagram */
+.control-diagram {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.control-column {
+    flex: 1;
+    min-width: 250px;
+}
+
+.control-title {
+    font-weight: bold;
+    color: var(--primary-blue);
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.control-subtitle {
+    text-align: center;
+    font-style: italic;
+    margin-bottom: 1rem;
+    color: var(--secondary-blue);
+}
+
+.control-content {
+    background: var(--white);
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+}
+
+/* Examination Grid */
+.examination-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.exam-item {
+    text-align: center;
+    padding: 1rem;
+    background: var(--white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    border: 1px solid #e2e8f0;
+}
+
+.exam-icon {
+    font-size: 2rem;
+    color: var(--primary-blue);
+    margin-bottom: 0.5rem;
+}
+
+.exam-title {
+    font-weight: bold;
+    color: var(--primary-blue);
+    margin-bottom: 0.3rem;
+}
+
+.exam-desc {
+    font-size: 0.8rem;
+    color: var(--text-color);
+}
+
+/* Gifts Grid */
+.gifts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.gift-category {
+    background: var(--light-gray);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    text-align: center;
+    border-top: 4px solid var(--accent-gold);
+}
+
+.category-title {
+    font-weight: bold;
+    color: var(--primary-blue);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.gift-list {
+    margin-bottom: 1rem;
+}
+
+.gift-list p {
+    margin: 0.3rem 0;
+    color: var(--text-color);
+}
+
+/* Duties List */
+.duties-list {
+    display: grid;
+    gap: 1rem;
+}
+
+.duty-item {
+    background: var(--light-gray);
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    border-left: 4px solid var(--secondary-blue);
+}
+
+/* Church Structure */
+.church-structure {
+    text-align: center;
+    padding: 2rem;
+}
+
+.church-level {
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0;
+    flex-wrap: wrap;
+}
+
+.church-box {
+    padding: 1rem 2rem;
+    background: var(--white);
+    border: 2px solid var(--secondary-blue);
+    border-radius: var(--border-radius);
+    margin: 0 0.5rem;
+    text-align: center;
+    min-width: 150px;
+    font-weight: 500;
+}
+
+.church-box.universal {
+    background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+    color: var(--white);
+    border-color: var(--primary-blue);
+}
+
+.church-box.local {
+    background: var(--light-gray);
+    color: var(--text-color);
+}
+
+.connection-line {
+    font-size: 1.5rem;
+    color: var(--secondary-blue);
+    margin: 0.5rem 0;
+}
+
+.structure-note {
+    font-style: italic;
+    color: var(--text-color);
+    margin-top: 1rem;
+    font-size: 0.9rem;
+}
+
+/* Results */
+.result {
+    padding: 0.5rem;
+    border-radius: var(--border-radius);
+    margin-top: 0.5rem;
+    font-weight: 500;
+    text-align: center;
+}
+
+.result.positive {
+    background: #d1fae5;
+    color: #065f46;
+    border: 1px solid #a7f3d0;
+}
+
+.result.negative {
+    background: #fee2e2;
+    color: #991b1b;
+    border: 1px solid #fecaca;
+}
+
+/* Lesson Actions */
+.lesson-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--light-gray);
+}
+
+.btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-weight: bold;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-secondary {
+    background-color: var(--light-gray);
+    color: var(--text-color);
+}
+
+.btn-secondary:hover {
+    background-color: #e2e8f0;
+}
+
+.btn i {
+    margin-right: 8px;
+}
+
+/* Lessons Navigation */
+.lessons-navigation {
+    background: var(--light-gray);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.lessons-navigation h3 {
+    color: var(--primary-blue);
+    margin-bottom: 1rem;
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.nav-btn {
+    padding: 0.5rem 1rem;
+    background: var(--white);
+    border: 2px solid var(--secondary-blue);
+    color: var(--secondary-blue);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: var(--transition);
+    font-weight: 500;
+}
+
+.nav-btn:hover {
+    background: var(--secondary-blue);
+    color: var(--white);
+}
+
+/* Go Top Button */
+.go-top-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: var(--primary-blue);
+    color: var(--white);
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: var(--shadow);
+    display: none;
+    z-index: 100;
+}
+
+.go-top-btn:hover {
+    background: var(--secondary-blue);
+    transform: translateY(-3px);
+}
+
+/* Bible Tooltip */
+.bible-tooltip {
+    position: fixed;
+    background: rgba(0,0,0,0.9);
+    color: white;
+    padding: 0.8rem 1rem;
+    border-radius: var(--border-radius);
+    font-size: 0.9rem;
+    max-width: 300px;
+    z-index: 10000;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    border-left: 4px solid var(--accent-gold);
+}
+
+.bible-tooltip.show {
+    opacity: 1;
+}
+
+.bible-tooltip .verse-ref {
+    font-weight: bold;
+    color: var(--accent-gold);
+    margin-bottom: 0.3rem;
+    display: block;
+}
+
+.bible-tooltip .verse-text {
+    font-style: italic;
+    line-height: 1.4;
+}
+
+.bible-tooltip .version {
+    font-size: 0.8rem;
+    color: #ccc;
+    margin-top: 0.3rem;
+    text-align: right;
+}
+
+/* Footer */
+footer {
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+    color: var(--white);
+    text-align: center;
+    padding: 2rem 1rem;
+    margin-top: 3rem;
+}
+
+.footer-links {
+    margin-top: 1rem;
+}
+
+.footer-links a {
+    color: var(--light-gold);
+    text-decoration: none;
+    margin: 0 10px;
+    transition: var(--transition);
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+    color: var(--white);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hamburger-menu {
+        top: 15px;
+        left: 15px;
+    }
+    
+    .print-btn {
+        position: relative;
+        top: auto;
+        right: auto;
+        margin-top: 1rem;
+        align-self: center;
+    }
+    
+    .banner-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .banner-icon {
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+    
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .lesson-actions {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .nav-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .gifts-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .examination-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .church-level {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .church-box {
+        margin: 0.5rem 0;
+        width: 100%;
+        max-width: 200px;
+    }
+    
+    .step-item {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .step-number {
+        align-self: center;
+    }
+    
+    .salvation-path {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .path-arrow {
+        transform: rotate(90deg);
+    }
+    
+    .control-diagram {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .church-info h1 {
+        font-size: 1.5rem;
+    }
+    
+    header h2 {
+        font-size: 1.2rem;
+    }
+    
+    .section-header h2 {
+        font-size: 1.5rem;
+    }
+    
+    .banner-text h2 {
+        font-size: 1.4rem;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .examination-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .nav-buttons {
+        flex-direction: column;
+    }
+    
+    .nav-btn {
+        width: 100%;
+    }
+    
+    .lesson-meta {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .hamburger-menu,
+    .print-btn,
+    .go-top-btn,
+    .lesson-actions {
+        display: none !important;
+    }
+    
+    body {
+        background: white !important;
+        color: black !important;
+    }
+    
+    .lesson-content {
+        box-shadow: none !important;
+        border: 1px solid #ccc !important;
+    }
+    
+    .bible-verse {
+        color: black !important;
+        border-bottom: 1px solid #ccc !important;
+    }
+}

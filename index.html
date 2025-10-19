@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apostila de Baptismo - Assembleia de Deus</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Estilos para indicadores de progresso nas lições */
+        .lesson-item {
+            position: relative;
+        }
+        .completion-indicator {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #28a745;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .lesson-item.completed .completion-indicator {
+            opacity: 1;
+        }
+        .lesson-progress {
+            font-size: 0.8em;
+            color: #666;
+            margin-top: 5px;
+        }
+        .class-progress {
+            background: #f8f9fa;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            border-left: 4px solid #007bff;
+        }
+        .continue-btn {
+            background: #28a745;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9em;
+            margin-top: 10px;
+        }
+        .continue-btn:hover {
+            background: #218838;
+        }
+    </style>
+</head>
+<body>
+    <!-- Menu Hamburger -->
+    <div class="hamburger-menu">
+        <div class="hamburger-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav class="sidebar-nav">
+            <div class="sidebar-header">
+                <h3>Navegação</h3>
+                <div class="close-sidebar">&times;</div>
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="#" class="nav-home"><i class="fas fa-home"></i> Página Inicial</a></li>
+                <li class="menu-divider">Classes</li>
+                <li><a href="class1.html"><i class="fas fa-book"></i> Classe I</a></li>
+                <li><a href="class2.html"><i class="fas fa-book"></i> Classe II</a></li>
+                <li><a href="class3.html"><i class="fas fa-book"></i> Classe III</a></li>
+                <li><a href="class4.html"><i class="fas fa-book"></i> Classe IV</a></li>
+                <li class="menu-divider">Ações</li>
+                <li><a href="#" id="print-all"><i class="fas fa-print"></i> Imprimir Tudo</a></li>
+                <li><a href="#" id="reset-progress"><i class="fas fa-redo"></i> Reiniciar Progresso</a></li>
+            </ul>
+            <div class="sidebar-footer">
+                <p>Igreja Evangélica<br>Assembleia de Deus<br>da Baixa - Ndlavela</p>
+            </div>
+        </nav>
+    </div>
+
+    <header>
+        <div class="header-content">
+            <button class="print-btn" onclick="window.print()">
+                <i class="fas fa-print"></i> Imprimir/Salvar PDF
+            </button>
+            <div class="church-info">
+                <h1>Igreja Evangélica Assembleia de Deus</h1>
+                <div class="subtitle">Congregação de Ndlavela</div>
+                <div class="header-decoration">
+                    <div class="cross"></div>
+                    <div class="dove"><i class="fas fa-dove"></i></div>
+                    <div class="cross"></div>
+                </div>
+            </div>
+            <h2>Apostila de Estudo para Baptismo de Novos Convertidos</h2>
+            <div class="editor">Editor: F.J.A</div>
+            <div class="year">Ndlavela 2016</div>
+            
+            <!-- Barra de progresso -->
+            <div class="progress-container">
+                <div class="progress-label">Seu Progresso nas Lições:</div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill">
+                        <span class="progress-text" id="progressText">0%</span>
+                    </div>
+                </div>
+                <div class="progress-stats">
+                    <span id="completedLessons">0</span> de <span id="totalLessons">20</span> lições concluídas
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <div class="container">
+        <!-- Banner de boas-vindas -->
+        <section class="welcome-banner">
+            <div class="banner-content">
+                <div class="banner-icon">
+                    <i class="fas fa-bible"></i>
+                </div>
+                <div class="banner-text">
+                    <h2>Bem-vindo aos estudos de novos Convertidos</h2>
+                    <p>Uma jornada de fé e aprendizado para novos convertidos. Que Deus abençoe seu estudo!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Área de conteúdo da lição -->
+        <section id="lesson-content" class="lesson-content">
+            <!-- O conteúdo da lição será carregado aqui dinamicamente -->
+        </section>
+
+        <!-- Continue de onde parou -->
+        <section class="continue-section" id="continueSection" style="display: none;">
+            <div class="section-header">
+                <h2><i class="fas fa-play-circle"></i> Continue de Onde Parou</h2>
+            </div>
+            <div class="continue-content" id="continueContent">
+                <!-- Conteúdo dinâmico da última lição acessada -->
+            </div>
+        </section>
+
+        <!-- Estatísticas rápidas com links -->
+        <section class="stats-section">
+            <div class="section-header">
+                <h2><i class="fas fa-chart-bar"></i> Visão Geral da Apostila</h2>
+                <p>Clique em cada item para explorar o conteúdo</p>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-card clickable" onclick="navigateTo('class1.html')">
+                    <div class="stat-icon">
+                        <i class="fas fa-layer-group"></i>
+                    </div>
+                    <div class="stat-number">4</div>
+                    <div class="stat-label">Classes</div>
+                </div>
+                <div class="stat-card clickable" onclick="navigateTo('#classes')">
+                    <div class="stat-icon">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <div class="stat-number">20</div>
+                    <div class="stat-label">Lições</div>
+                </div>
+                <div class="stat-card clickable" onclick="showBibleReferences()">
+                    <div class="stat-icon">
+                        <i class="fas fa-verse"></i>
+                    </div>
+                    <div class="stat-number">150+</div>
+                    <div class="stat-label">Referências Bíblicas</div>
+                </div>
+                <div class="stat-card clickable" onclick="showDiagrams()">
+                    <div class="stat-icon">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+                    <div class="stat-number">12</div>
+                    <div class="stat-label">Diagramas</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Navegação rápida -->
+        <section class="quick-nav">
+            <div class="section-header">
+                <h2><i class="fas fa-rocket"></i> Navegação Rápida</h2>
+            </div>
+            <div class="nav-grid">
+                <div class="nav-card" onclick="navigateTo('class1.html')">
+                    <i class="fas fa-bookmark"></i>
+                    <h3>Classe I</h3>
+                    <p>Fundamentos da Fé</p>
+                    <span class="nav-badge">4 lições</span>
+                    <div class="class-progress" id="class1Progress">
+                        <!-- Progresso dinâmico -->
+                    </div>
+                </div>
+                <div class="nav-card" onclick="navigateTo('class2.html')">
+                    <i class="fas fa-bookmark"></i>
+                    <h3>Classe II</h3>
+                    <p>Vida Cristã Prática</p>
+                    <span class="nav-badge">5 lições</span>
+                    <div class="class-progress" id="class2Progress">
+                        <!-- Progresso dinâmico -->
+                    </div>
+                </div>
+                <div class="nav-card" onclick="navigateTo('class3.html')">
+                    <i class="fas fa-bookmark"></i>
+                    <h3>Classe III</h3>
+                    <p>Doutrinas Bíblicas</p>
+                    <span class="nav-badge">4 lições</span>
+                    <div class="class-progress" id="class3Progress">
+                        <!-- Progresso dinâmico -->
+                    </div>
+                </div>
+                <div class="nav-card" onclick="navigateTo('class4.html')">
+                    <i class="fas fa-bookmark"></i>
+                    <h3>Classe IV</h3>
+                    <p>Vida na Igreja</p>
+                    <span class="nav-badge">7 lições</span>
+                    <div class="class-progress" id="class4Progress">
+                        <!-- Progresso dinâmico -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Todas as lições em resumo -->
+        <section id="classes" class="all-lessons">
+            <div class="section-header">
+                <h2><i class="fas fa-list-ul"></i> Todas as Lições</h2>
+                <p>Clique em qualquer lição para estudar</p>
+            </div>
+            
+            <div class="lessons-grid">
+                <!-- Classe I -->
+                <div class="lesson-group">
+                    <h3 class="group-title">Classe I - Fundamentos da Fé</h3>
+                    <div class="lesson-items">
+                        <div class="lesson-item" onclick="loadLesson(1)">
+                            <span class="lesson-num">1</span>
+                            <span class="lesson-name">Salvação e o Senhorio de Cristo</span>
+                            <div class="completion-indicator"></div>
+                        </div>
+                        <div class="lesson-item" onclick="loadLesson(2)">
+                            <span class="lesson-num">2</span>
+                            <span class="lesson-name">A Bíblia</span>
+                            <div class="completion-indicator"></div>
+                        </div>
+                        <div class="lesson-item" onclick="loadLesson(3)">
+                            <span class="lesson-num">3</span>
+                            <span class="lesson-name">A Oração</span>
+                            <div class="completion-indicator"></div>
+                        </div>
+                        <div class="lesson-item" onclick="loadLesson(4)">
+                            <span class="lesson-num">4</span>
+                            <span class="lesson-name">O Perdão</span>
+                            <div class="completion-indicator"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Classe II -->
+                <div class="lesson-group">
+                    <h3 class="group-title">Classe II - Vida Cristã Prática</h3>
+                    <div class="lesson-items">
+                        <div class="lesson-item" onclick="loadLesson(5)">
+                            <span class="lesson-num">5</span>
+                            <span class="lesson-name">Como Vencer a Tentação</span>
+                            <div class="completion-indicator"></div>
+                        </div>
+                        <div class="lesson-item" onclick="loadLesson(6)">
+                            <span class="lesson-num">6</span>
+                            <span class="lesson-name">A Vontade de Deus</span>
+                            <div class="completion-indicator"></div>
+                        </div>
+                        <div class="lesson-item" onclick="loadLesson(7)">
+                            <span class="lesson-num">7</span>
+                            <span class="lesson-name">O Testemunho</span>
+                            <div class="completion-indicator"></div>
+                        </div>
+                        <div class="lesson-item" onclick="loadLesson(8)">
+                            <span class="lesson-num">8</span>
+                            <span class="lesson-name">Discipulado</span>
+                            <div class="completion-indicator"></div>
+                        </div>
+                        <div class="lesson-item" onclick="loadLesson(9)">
+                            <span class="lesson-num">9</span>
+                            <span class="lesson-name">O Espírito Santo - Fruto</span>
+                            <div class="completion-indicator"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Classe III -->
+                <div class="lesson-group">
+                    <h3 class="group-title">Classe III - Doutrinas Bíblicas</h3>
+                    <div class="lesson-items">
+                        <div class="lesson-item" onclick="loadLesson(10)">
+                            <span class="lesson-num">10</span>
+                            <span class="lesson-name">O Espírito Santo - Batismo e Dons</span>
+                            <div class="completion-indicator"></div>
+                        </div>
+                        <div class="lesson-item" onclick="loadLesson(11)">
+                            <span class="lesson-num">11</span>
+                            <span class="lesson-name">Factos Não Sentimentos</span>
+                            <div class="completion-indicator"></div>
+                        </div>
+                        <div class="lesson-item" onclick="loadLesson(12)">
+                            <span class="lesson-num">12</span>
+                            <span class="lesson-name">Consciência do Corpo</span>
+                            <div class="completion-indicator"></div>
+                        </div>
+                        <div class="lesson-item" onclick="loadLesson(13)">
+                            <span class="lesson-num">13</span>
+                            <span class="lesson-name">Santificação</span>
+                            <div class="completion-indicator"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Classe IV -->
+                <div class="lesson-group">
+                    <h3 class="group-title">Classe IV - Vida na Igreja</h3>
+                    <div class="lesson-items">
+                        <div class="lesson-item" onclick="loadLesson(14)">
+                            <span class="lesson-num">14</span>
+                            <span class="lesson-name">Membresia</span>
+                            <div class="completion-indicator"></div>
+                        </div>
+                        <div class="lesson-item" onclick="loadLesson(15)">
+                            <span class="lesson-num">15</span>
+                            <span class="lesson-name">Batismo nas Águas</span>
+                            <div class="completion-indicator"></div>
+                        </div>
+                        <div class="lesson-item" onclick="loadLesson(16)">
+                            <span class="lesson-num">16</span>
+                            <span class="lesson-name">A Ceia do Senhor</span>
+                            <div class="completion-indicator"></div>
+                        </div>
+                        <div class="lesson-item" onclick="loadLesson(17)">
+                            <span class="lesson-num">17</span>
+                            <span class="lesson-name">O Jejum</span>
+                            <div class="completion-indicator"></div>
+                        </div>
+                        <div class="lesson-item" onclick="loadLesson(18)">
+                            <span class="lesson-num">18</span>
+                            <span class="lesson-name">Disciplina na Igreja</span>
+                            <div class="completion-indicator"></div>
+                        </div>
+                        <div class="lesson-item" onclick="loadLesson(19)">
+                            <span class="lesson-num">19</span>
+                            <span class="lesson-name">Conduta do Membro</span>
+                            <div class="completion-indicator"></div>
+                        </div>
+                        <div class="lesson-item" onclick="loadLesson(20)">
+                            <span class="lesson-num">20</span>
+                            <span class="lesson-name">Escatologia</span>
+                            <div class="completion-indicator"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Botão Voltar ao Topo -->
+    <button id="goTopBtn" class="go-top-btn" title="Voltar ao Topo">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Tooltip para versículos -->
+    <div id="bibleTooltip" class="bible-tooltip"></div>
+
+    <footer>
+        <p>Igreja Evangélica Assembleia de Deus da Baixa - Congregação de Ndiavela</p>
+        <p>Apostila de Estudo para Batismo de Novos Convertidos - Ndlavela 2016</p>
+        <div class="footer-links">
+            <a href="#" onclick="showHelp()">Ajuda</a> |
+            <a href="#" onclick="showAbout()">Sobre</a> |
+            <a href="#" onclick="showBibleVersion()">Versão Bíblica: ACF</a>
+        </div>
+    </footer>
+
+    <script src="bible-data.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // Funções melhoradas para comunicação entre páginas
+        function navigateTo(url) {
+            window.location.href = url;
+        }
+
+        function loadLesson(lessonNumber) {
+            // Determinar qual classe contém a lição
+            let classPage = '';
+            if (lessonNumber <= 4) classPage = 'class1.html';
+            else if (lessonNumber <= 9) classPage = 'class2.html';
+            else if (lessonNumber <= 13) classPage = 'class3.html';
+            else classPage = 'class4.html';
+
+            // Salvar a lição atual no localStorage
+            localStorage.setItem('currentLesson', lessonNumber);
+            localStorage.setItem('lastAccessed', new Date().toISOString());
+            
+            // Navegar para a página da classe
+            window.location.href = classPage;
+        }
+
+        function updateProgressDisplay() {
+            const completedLessons = JSON.parse(localStorage.getItem('completedLessons') || '[]');
+            const totalLessons = 20;
+            const progress = (completedLessons.length / totalLessons) * 100;
+
+            // Atualizar barra de progresso
+            document.getElementById('progressFill').style.width = progress + '%';
+            document.getElementById('progressText').textContent = Math.round(progress) + '%';
+            document.getElementById('completedLessons').textContent = completedLessons.length;
+
+            // Atualizar indicadores nas lições
+            document.querySelectorAll('.lesson-item').forEach((item, index) => {
+                const lessonNum = index + 1;
+                if (completedLessons.includes(lessonNum.toString())) {
+                    item.classList.add('completed');
+                }
+            });
+
+            // Atualizar progresso por classe
+            updateClassProgress(1, 4, 'class1Progress');
+            updateClassProgress(5, 9, 'class2Progress');
+            updateClassProgress(10, 13, 'class3Progress');
+            updateClassProgress(14, 20, 'class4Progress');
+
+            // Mostrar seção "Continue de onde parou" se houver progresso
+            if (completedLessons.length > 0) {
+                showContinueSection();
+            }
+        }
+
+        function updateClassProgress(start, end, elementId) {
+            const completedLessons = JSON.parse(localStorage.getItem('completedLessons') || '[]');
+            const classLessons = Array.from({length: end - start + 1}, (_, i) => (start + i).toString());
+            const completed = classLessons.filter(lesson => completedLessons.includes(lesson));
+            const progress = (completed.length / classLessons.length) * 100;
+            
+            const element = document.getElementById(elementId);
+            if (element) {
+                element.innerHTML = `
+                    <div class="lesson-progress">
+                        ${completed.length} de ${classLessons.length} concluídas
+                        <div style="background: #e9ecef; height: 5px; border-radius: 3px; margin-top: 5px;">
+                            <div style="width: ${progress}%; background: #28a745; height: 100%; border-radius: 3px;"></div>
+                        </div>
+                    </div>
+                `;
+            }
+        }
+
+        function showContinueSection() {
+            const lastLesson = localStorage.getItem('currentLesson') || '1';
+            const completedLessons = JSON.parse(localStorage.getItem('completedLessons') || '[]');
+            
+            let nextLesson = parseInt(lastLesson);
+            while (completedLessons.includes(nextLesson.toString()) && nextLesson < 20) {
+                nextLesson++;
+            }
+
+            if (nextLesson <= 20) {
+                document.getElementById('continueSection').style.display = 'block';
+                document.getElementById('continueContent').innerHTML = `
+                    <div class="continue-card">
+                        <h3>Próxima Lição: ${getLessonName(nextLesson)}</h3>
+                        <p>Continue seus estudos de onde parou</p>
+                        <button class="continue-btn" onclick="loadLesson(${nextLesson})">
+                            <i class="fas fa-play"></i> Continuar Lição ${nextLesson}
+                        </button>
+                    </div>
+                `;
+            }
+        }
+
+        function getLessonName(lessonNumber) {
+            const lessonNames = {
+                1: 'Salvação e o Senhorio de Cristo',
+                2: 'A Bíblia',
+                3: 'A Oração',
+                4: 'O Perdão',
+                5: 'Como Vencer a Tentação',
+                6: 'A Vontade de Deus',
+                7: 'O Testemunho',
+                8: 'Discipulado',
+                9: 'O Espírito Santo - Fruto',
+                10: 'O Espírito Santo - Batismo e Dons',
+                11: 'Factos Não Sentimentos',
+                12: 'Consciência do Corpo',
+                13: 'Santificação',
+                14: 'Membresia',
+                15: 'Batismo nas Águas',
+                16: 'A Ceia do Senhor',
+                17: 'O Jejum',
+                18: 'Disciplina na Igreja',
+                19: 'Conduta do Membro',
+                20: 'Escatologia'
+            };
+            return lessonNames[lessonNumber] || `Lição ${lessonNumber}`;
+        }
+
+        function showBibleReferences() {
+            alert('Esta apostila contém mais de 150 referências bíblicas cuidadosamente selecionadas para cada lição.');
+        }
+
+        function showDiagrams() {
+            alert('Foram incluídos 12 diagramas visuais para ajudar no entendimento dos conceitos bíblicos.');
+        }
+
+        // Inicializar quando a página carregar
+        document.addEventListener('DOMContentLoaded', function() {
+            updateProgressDisplay();
+            initializeBibleVerses();
+        });
+    </script>
+</body>
+</html>

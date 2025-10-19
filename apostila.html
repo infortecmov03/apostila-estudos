@@ -1,0 +1,1641 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apostila de Batismo - Assembleia de Deus Moçambique</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-blue: #1E3A8A;
+            --secondary-blue: #2563EB;
+            --accent-gold: #D4AF37;
+            --light-gold: #F7E98E;
+            --white: #FFFFFF;
+            --light-gray: #F8FAFC;
+            --dark-gray: #1E293B;
+            --text-color: #334155;
+            --success: #10B981;
+            --warning: #F59E0B;
+            --error: #EF4444;
+            --border-radius: 8px;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background: linear-gradient(135deg, var(--light-gray) 0%, #E2E8F0 100%);
+            min-height: 100vh;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+            color: var(--white);
+            padding: 1.5rem;
+            text-align: center;
+            position: relative;
+            box-shadow: var(--shadow);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .church-info h1 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+        }
+
+        .subtitle {
+            font-style: italic;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .header-decoration {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0.5rem 0;
+        }
+
+        .cross {
+            width: 20px;
+            height: 30px;
+            background-color: var(--accent-gold);
+            position: relative;
+            margin: 0 10px;
+        }
+
+        .cross:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 20px;
+            height: 30px;
+            background-color: var(--accent-gold);
+            transform: translateX(-50%) rotate(90deg);
+        }
+
+        .dove {
+            color: var(--accent-gold);
+            font-size: 1.5rem;
+            margin: 0 15px;
+        }
+
+        header h2 {
+            font-size: 1.5rem;
+            margin: 1rem 0;
+            color: var(--light-gold);
+        }
+
+        .editor, .year {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* Hamburger Menu */
+        .hamburger-menu {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+        }
+
+        .hamburger-icon {
+            width: 30px;
+            height: 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .hamburger-icon span {
+            height: 3px;
+            width: 100%;
+            background-color: var(--white);
+            border-radius: 2px;
+            transition: var(--transition);
+        }
+
+        .hamburger-icon.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .hamburger-icon.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger-icon.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -6px);
+        }
+
+        .sidebar-nav {
+            position: fixed;
+            top: 0;
+            left: -300px;
+            width: 300px;
+            height: 100vh;
+            background: linear-gradient(to bottom, var(--primary-blue), var(--secondary-blue));
+            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+            z-index: 999;
+            overflow-y: auto;
+        }
+
+        .sidebar-nav.active {
+            left: 0;
+        }
+
+        .sidebar-header {
+            padding: 1.5rem;
+            background-color: rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .sidebar-header h3 {
+            color: var(--white);
+            font-size: 1.2rem;
+        }
+
+        .close-sidebar {
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .close-sidebar:hover {
+            color: var(--accent-gold);
+        }
+
+        .sidebar-menu {
+            list-style: none;
+            padding: 1rem 0;
+        }
+
+        .sidebar-menu li {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .sidebar-menu li a {
+            display: flex;
+            align-items: center;
+            padding: 1rem 1.5rem;
+            color: var(--white);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .sidebar-menu li a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--accent-gold);
+        }
+
+        .sidebar-menu li a i {
+            margin-right: 10px;
+            width: 20px;
+            text-align: center;
+        }
+
+        .menu-divider {
+            padding: 0.5rem 1.5rem;
+            color: var(--light-gold);
+            font-size: 0.9rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 1rem;
+        }
+
+        .sidebar-footer {
+            padding: 1.5rem;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: auto;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .section-header h2 {
+            color: var(--primary-blue);
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .section-header h2 i {
+            margin-right: 10px;
+            color: var(--accent-gold);
+        }
+
+        .section-header p {
+            color: var(--text-color);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Welcome Banner */
+        .welcome-banner {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            color: var(--white);
+            box-shadow: var(--shadow);
+        }
+
+        .banner-content {
+            display: flex;
+            align-items: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .banner-icon {
+            font-size: 3rem;
+            margin-right: 1.5rem;
+            color: var(--accent-gold);
+        }
+
+        .banner-text h2 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .banner-text p {
+            opacity: 0.9;
+            font-size: 1.1rem;
+        }
+
+        /* Progress Bar */
+        .progress-container {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin: 1.5rem 0;
+            text-align: center;
+            backdrop-filter: blur(5px);
+        }
+
+        .progress-label {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: var(--light-gold);
+        }
+
+        .progress-bar {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            height: 20px;
+            margin: 10px 0;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            background: linear-gradient(90deg, var(--accent-gold), var(--light-gold));
+            height: 100%;
+            border-radius: 10px;
+            transition: width 0.5s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-blue);
+            font-weight: bold;
+            font-size: 12px;
+        }
+
+        .progress-stats {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        /* Print Button */
+        .print-btn {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background-color: var(--accent-gold);
+            color: var(--primary-blue);
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-weight: bold;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+        }
+
+        .print-btn:hover {
+            background-color: var(--light-gold);
+            transform: translateY(-2px);
+        }
+
+        .print-btn i {
+            margin-right: 5px;
+        }
+
+        /* Stats Section */
+        .stats-section {
+            margin-bottom: 2rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .stat-card {
+            background-color: var(--white);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border-top: 4px solid var(--accent-gold);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-icon {
+            font-size: 2rem;
+            color: var(--primary-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--primary-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--text-color);
+            font-size: 0.9rem;
+        }
+
+        /* Classes Navigation */
+        .classes-nav {
+            margin-bottom: 2rem;
+        }
+
+        .filter-buttons {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .filter-btn {
+            padding: 10px 20px;
+            border: 2px solid var(--secondary-blue);
+            background: var(--white);
+            color: var(--secondary-blue);
+            border-radius: 30px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            background: var(--secondary-blue);
+            color: var(--white);
+        }
+
+        .filter-btn i {
+            margin-right: 8px;
+        }
+
+        .class-category {
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
+        .category-header {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+            color: var(--white);
+            padding: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .category-header h3 {
+            font-size: 1.4rem;
+        }
+
+        .lesson-count {
+            background-color: var(--accent-gold);
+            color: var(--primary-blue);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        .class-items {
+            padding: 1.5rem;
+        }
+
+        .class-item {
+            display: flex;
+            margin-bottom: 1.5rem;
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            background-color: var(--light-gray);
+            transition: var(--transition);
+            border-left: 4px solid var(--secondary-blue);
+        }
+
+        .class-item:hover {
+            transform: translateX(5px);
+            box-shadow: var(--shadow);
+            border-left-color: var(--accent-gold);
+        }
+
+        .class-badge {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+
+        .class-content {
+            flex: 1;
+        }
+
+        .class-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 10px;
+        }
+
+        .class-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--primary-blue);
+            text-decoration: none;
+            flex: 1;
+            cursor: pointer;
+        }
+
+        .class-title:hover {
+            color: var(--secondary-blue);
+            text-decoration: underline;
+        }
+
+        .lesson-status {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 2px solid #ddd;
+            background: #f8f9fa;
+            margin-left: 10px;
+            flex-shrink: 0;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .lesson-status.completed {
+            background: var(--success);
+            border-color: var(--success);
+        }
+
+        .lesson-status.started {
+            background: var(--warning);
+            border-color: var(--warning);
+        }
+
+        .class-description {
+            color: var(--text-color);
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        .class-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            color: #666;
+        }
+
+        .bible-refs, .duration {
+            display: flex;
+            align-items: center;
+        }
+
+        .bible-refs i, .duration i {
+            margin-right: 5px;
+            color: var(--secondary-blue);
+        }
+
+        .bible-refs {
+            color: var(--secondary-blue);
+            font-weight: 500;
+        }
+
+        .duration {
+            color: #7f8c8d;
+        }
+
+        /* Lesson Content */
+        .lesson-content {
+            display: none;
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow);
+        }
+
+        .lesson-content.active {
+            display: block;
+        }
+
+        .lesson-header {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--light-gray);
+        }
+
+        .lesson-header h2 {
+            color: var(--primary-blue);
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .lesson-meta {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .lesson-body {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .lesson-section {
+            margin-bottom: 2rem;
+        }
+
+        .lesson-section h3 {
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        .lesson-section p {
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .bible-verse {
+            background-color: var(--light-gray);
+            padding: 1rem;
+            border-left: 4px solid var(--accent-gold);
+            margin: 1rem 0;
+            font-style: italic;
+        }
+
+        .lesson-actions {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--light-gray);
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-weight: bold;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-secondary {
+            background-color: var(--light-gray);
+            color: var(--text-color);
+        }
+
+        .btn-secondary:hover {
+            background-color: #e2e8f0;
+        }
+
+        .btn i {
+            margin-right: 8px;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem 1rem;
+            margin-top: 3rem;
+        }
+
+        .footer-links {
+            margin-top: 1rem;
+        }
+
+        .footer-links a {
+            color: var(--light-gold);
+            text-decoration: none;
+            margin: 0 10px;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+            color: var(--white);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hamburger-menu {
+                top: 15px;
+                left: 15px;
+            }
+            
+            .print-btn {
+                position: relative;
+                top: auto;
+                right: auto;
+                margin-top: 1rem;
+                align-self: center;
+            }
+            
+            .banner-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .banner-icon {
+                margin-right: 0;
+                margin-bottom: 1rem;
+            }
+            
+            .filter-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .filter-btn {
+                width: 200px;
+            }
+            
+            .class-header {
+                flex-direction: column;
+            }
+            
+            .lesson-status {
+                margin-left: 0;
+                margin-top: 5px;
+            }
+            
+            .class-meta {
+                flex-direction: column;
+                gap: 5px;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .lesson-actions {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .church-info h1 {
+                font-size: 1.5rem;
+            }
+            
+            header h2 {
+                font-size: 1.2rem;
+            }
+            
+            .section-header h2 {
+                font-size: 1.5rem;
+            }
+            
+            .banner-text h2 {
+                font-size: 1.4rem;
+            }
+            
+            .category-header {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Menu Hamburger -->
+    <div class="hamburger-menu">
+        <div class="hamburger-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav class="sidebar-nav">
+            <div class="sidebar-header">
+                <h3>Navegação</h3>
+                <div class="close-sidebar">&times;</div>
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="#" class="nav-home"><i class="fas fa-home"></i> Página Inicial</a></li>
+                <li class="menu-divider">Classes</li>
+                <li><a href="#class1"><i class="fas fa-book"></i> Classe I</a></li>
+                <li><a href="#class2"><i class="fas fa-book"></i> Classe II</a></li>
+                <li><a href="#class3"><i class="fas fa-book"></i> Classe III</a></li>
+                <li><a href="#class4"><i class="fas fa-book"></i> Classe IV</a></li>
+                <li class="menu-divider">Ações</li>
+                <li><a href="#" id="print-all"><i class="fas fa-print"></i> Imprimir Tudo</a></li>
+                <li><a href="#" id="reset-progress"><i class="fas fa-redo"></i> Reiniciar Progresso</a></li>
+            </ul>
+            <div class="sidebar-footer">
+                <p>Igreja Evangélica<br>Assembleia de Deus<br>da Baixa - Ndlavela</p>
+            </div>
+        </nav>
+    </div>
+
+    <header>
+        <div class="header-content">
+            <button class="print-btn" onclick="window.print()">
+                <i class="fas fa-print"></i> Imprimir/Salvar PDF
+            </button>
+            <div class="church-info">
+                <h1>Igreja Evangélica Assembleia de Deus</h1>
+                <div class="subtitle">Congregação de Ndlavela - Moçambique</div>
+                <div class="header-decoration">
+                    <div class="cross"></div>
+                    <div class="dove"><i class="fas fa-dove"></i></div>
+                    <div class="cross"></div>
+                </div>
+            </div>
+            <h2>Apostila de Estudo para Batismo de Novos Convertidos</h2>
+            <div class="editor">Editor: SICARROFIC</div>
+            <div class="year">Ndlavela 2016</div>
+            
+            <!-- Barra de progresso -->
+            <div class="progress-container">
+                <div class="progress-label">Seu Progresso nas Lições:</div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill">
+                        <span class="progress-text" id="progressText">0%</span>
+                    </div>
+                </div>
+                <div class="progress-stats">
+                    <span id="completedLessons">0</span> de <span id="totalLessons">20</span> lições concluídas
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <div class="container">
+        <!-- Banner de boas-vindas -->
+        <section class="welcome-banner">
+            <div class="banner-content">
+                <div class="banner-icon">
+                    <i class="fas fa-bible"></i>
+                </div>
+                <div class="banner-text">
+                    <h2>Bem-vindo ao Curso de Batismo</h2>
+                    <p>Uma jornada de fé e aprendizado para novos convertidos. Que Deus abençoe seu estudo!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Área de conteúdo da lição -->
+        <section id="lesson-content" class="lesson-content">
+            <!-- O conteúdo da lição será carregado aqui dinamicamente -->
+        </section>
+
+        <!-- Estatísticas rápidas -->
+        <section class="stats-section">
+            <div class="section-header">
+                <h2><i class="fas fa-chart-bar"></i> Visão Geral da Apostila</h2>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-layer-group"></i>
+                    </div>
+                    <div class="stat-number">4</div>
+                    <div class="stat-label">Classes</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <div class="stat-number">20</div>
+                    <div class="stat-label">Lições</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-verse"></i>
+                    </div>
+                    <div class="stat-number">150+</div>
+                    <div class="stat-label">Referências Bíblicas</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+                    <div class="stat-number">12</div>
+                    <div class="stat-label">Diagramas</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Navegação por classes -->
+        <section class="classes-nav">
+            <div class="section-header">
+                <h2><i class="fas fa-graduation-cap"></i> Classes e Lições</h2>
+                <p>Selecione uma classe para ver suas lições ou use os filtros abaixo</p>
+            </div>
+            
+            <!-- Filtros por classe -->
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">
+                    <i class="fas fa-th"></i> Todas as Classes
+                </button>
+                <button class="filter-btn" data-filter="class1">
+                    <i class="fas fa-bookmark"></i> Classe I
+                </button>
+                <button class="filter-btn" data-filter="class2">
+                    <i class="fas fa-bookmark"></i> Classe II
+                </button>
+                <button class="filter-btn" data-filter="class3">
+                    <i class="fas fa-bookmark"></i> Classe III
+                </button>
+                <button class="filter-btn" data-filter="class4">
+                    <i class="fas fa-bookmark"></i> Classe IV
+                </button>
+            </div>
+            
+            <div class="classes-list">
+                <!-- Classe I -->
+                <div class="class-category" id="class1-section">
+                    <div class="category-header">
+                        <h3>Classe I - Fundamentos da Fé</h3>
+                        <span class="lesson-count">5 Lições</span>
+                    </div>
+                    <div class="class-items">
+                        <!-- Lição 1 -->
+                        <div class="class-item" data-class="class1">
+                            <div class="class-badge">1</div>
+                            <div class="class-content">
+                                <div class="class-header">
+                                    <div class="class-title" data-lesson="1">Salvação e o Senhorio de Cristo</div>
+                                    <span class="lesson-status" data-lesson="1"></span>
+                                </div>
+                                <div class="class-description">A obra de Cristo no Calvário e os passos para a salvação</div>
+                                <div class="class-meta">
+                                    <span class="bible-refs"><i class="fas fa-bible"></i> 8 referências</span>
+                                    <span class="duration"><i class="far fa-clock"></i> 30 min</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Lição 2 -->
+                        <div class="class-item" data-class="class1">
+                            <div class="class-badge">2</div>
+                            <div class="class-content">
+                                <div class="class-header">
+                                    <div class="class-title" data-lesson="2">A Bíblia</div>
+                                    <span class="lesson-status" data-lesson="2"></span>
+                                </div>
+                                <div class="class-description">Conhecendo a Palavra de Deus e sua divisão</div>
+                                <div class="class-meta">
+                                    <span class="bible-refs"><i class="fas fa-bible"></i> Divisão completa</span>
+                                    <span class="duration"><i class="far fa-clock"></i> 25 min</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Lição 3 -->
+                        <div class="class-item" data-class="class1">
+                            <div class="class-badge">3</div>
+                            <div class="class-content">
+                                <div class="class-header">
+                                    <div class="class-title" data-lesson="3">A Oração</div>
+                                    <span class="lesson-status" data-lesson="3"></span>
+                                </div>
+                                <div class="class-description">Comunicação com Deus e seus princípios</div>
+                                <div class="class-meta">
+                                    <span class="bible-refs"><i class="fas fa-bible"></i> 15 referências</span>
+                                    <span class="duration"><i class="far fa-clock"></i> 35 min</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Lição 4 -->
+                        <div class="class-item" data-class="class1">
+                            <div class="class-badge">4</div>
+                            <div class="class-content">
+                                <div class="class-header">
+                                    <div class="class-title" data-lesson="4">O Perdão</div>
+                                    <span class="lesson-status" data-lesson="4"></span>
+                                </div>
+                                <div class="class-description">A base do perdão divino e nossa responsabilidade</div>
+                                <div class="class-meta">
+                                    <span class="bible-refs"><i class="fas fa-bible"></i> 12 referências</span>
+                                    <span class="duration"><i class="far fa-clock"></i> 30 min</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Lição 5 -->
+                        <div class="class-item" data-class="class1">
+                            <div class="class-badge">5</div>
+                            <div class="class-content">
+                                <div class="class-header">
+                                    <div class="class-title" data-lesson="5">A Nova Vida em Cristo</div>
+                                    <span class="lesson-status" data-lesson="5"></span>
+                                </div>
+                                <div class="class-description">Transformação e santificação do crente</div>
+                                <div class="class-meta">
+                                    <span class="bible-refs"><i class="fas fa-bible"></i> 10 referências</span>
+                                    <span class="duration"><i class="far fa-clock"></i> 40 min</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Classe II -->
+                <div class="class-category" id="class2-section">
+                    <div class="category-header">
+                        <h3>Classe II - Vida Cristã Prática</h3>
+                        <span class="lesson-count">5 Lições</span>
+                    </div>
+                    <div class="class-items">
+                        <!-- Lição 6 -->
+                        <div class="class-item" data-class="class2">
+                            <div class="class-badge">6</div>
+                            <div class="class-content">
+                                <div class="class-header">
+                                    <div class="class-title" data-lesson="6">Como Vencer a Tentação</div>
+                                    <span class="lesson-status" data-lesson="6"></span>
+                                </div>
+                                <div class="class-description">Estratégias espirituais para resistir ao mal</div>
+                                <div class="class-meta">
+                                    <span class="bible-refs"><i class="fas fa-bible"></i> 10 referências</span>
+                                    <span class="duration"><i class="far fa-clock"></i> 40 min</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Lição 7 -->
+                        <div class="class-item" data-class="class2">
+                            <div class="class-badge">7</div>
+                            <div class="class-content">
+                                <div class="class-header">
+                                    <div class="class-title" data-lesson="7">A Vontade de Deus</div>
+                                    <span class="lesson-status" data-lesson="7"></span>
+                                </div>
+                                <div class="class-description">Descobrindo e seguindo a vontade divina</div>
+                                <div class="class-meta">
+                                    <span class="bible-refs"><i class="fas fa-bible"></i> 14 referências</span>
+                                    <span class="duration"><i class="far fa-clock"></i> 35 min</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Lição 8 -->
+                        <div class="class-item" data-class="class2">
+                            <div class="class-badge">8</div>
+                            <div class="class-content">
+                                <div class="class-header">
+                                    <div class="class-title" data-lesson="8">O Testemunho</div>
+                                    <span class="lesson-status" data-lesson="8"></span>
+                                </div>
+                                <div class="class-description">Compartilhando a fé com eficácia</div>
+                                <div class="class-meta">
+                                    <span class="bible-refs"><i class="fas fa-bible"></i> 11 referências</span>
+                                    <span class="duration"><i class="far fa-clock"></i> 30 min</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Lição 9 -->
+                        <div class="class-item" data-class="class2">
+                            <div class="class-badge">9</div>
+                            <div class="class-content">
+                                <div class="class-header">
+                                    <div class="class-title" data-lesson="9">Discipulado</div>
+                                    <span class="lesson-status" data-lesson="9"></span>
+                                </div>
+                                <div class="class-description">Seguindo a Cristo e fazendo discípulos</div>
+                                <div class="class-meta">
+                                    <span class="bible-refs"><i class="fas fa-bible"></i> 8 referências</span>
+                                    <span class="duration"><i class="far fa-clock"></i> 25 min</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Lição 10 -->
+                        <div class="class-item" data-class="class2">
+                            <div class="class-badge">10</div>
+                            <div class="class-content">
+                                <div class="class-header">
+                                    <div class="class-title" data-lesson="10">O Espírito Santo - Fruto</div>
+                                    <span class="lesson-status" data-lesson="10"></span>
+                                </div>
+                                <div class="class-description">Os frutos do Espírito na vida do crente</div>
+                                <div class="class-meta">
+                                    <span class="bible-refs"><i class="fas fa-bible"></i> 9 referências</span>
+                                    <span class="duration"><i class="far fa-clock"></i> 30 min</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Classe III -->
+                <div class="class-category" id="class3-section">
+                    <div class="category-header">
+                        <h3>Classe III - Doutrinas Bíblicas</h3>
+                        <span class="lesson-count">5 Lições</span>
+                    </div>
+                    <div class="class-items">
+                        <!-- Lição 11 -->
+                        <div class="class-item" data-class="class3">
+                            <div class="class-badge">11</div>
+                            <div class="class-content">
+                                <div class="class-header">
+                                    <div class="class-title" data-lesson="11">A Igreja</div>
+                                    <span class="lesson-status" data-lesson="11"></span>
+                                </div>
+                                <div class="class-description">Natureza, propósito e organização da igreja</div>
+                                <div class="class-meta">
+                                    <span class="bible-refs"><i class="fas fa-bible"></i> 12 referências</span>
+                                    <span class="duration"><i class="far fa-clock"></i> 35 min</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Lição 12 -->
+                        <div class="class-item" data-class="class3">
+                            <div class="class-badge">12</div>
+                            <div class="class-content">
+                                <div class="class-header">
+                                    <div class="class-title" data-lesson="12">Batismo nas Águas</div>
+                                    <span class="lesson-status" data-lesson="12"></span>
+                                </div>
+                                <div class="class-description">Significado, modo e importância do batismo</div>
+                                <div class="class-meta">
+                                    <span class="bible-refs"><i class="fas fa-bible"></i> 15 referências</span>
+                                    <span class="duration"><i class="far fa-clock"></i> 40 min</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Lição 13 -->
+                        <div class="class-item" data-class="class3">
+                            <div class="class-badge">13</div>
+                            <div class="class-content">
+                                <div class="class-header">
+                                    <div class="class-title" data-lesson="13">Santa Ceia</div>
+                                    <span class="lesson-status" data-lesson="13"></span>
+                                </div>
+                                <div class="class-description">Significado e celebração da Santa Ceia</div>
+                                <div class="class-meta">
+                                    <span class="bible-refs"><i class="fas fa-bible"></i> 10 referências</span>
+                                    <span class="duration"><i class="far fa-clock"></i> 30 min</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Lição 14 -->
+                        <div class="class-item" data-class="class3">
+                            <div class="class-badge">14</div>
+                            <div class="class-content">
+                                <div class="class-header">
+                                    <div class="class-title" data-lesson="14">Dons Espirituais</div>
+                                    <span class="lesson-status" data-lesson="14"></span>
+                                </div>
+                                <div class="class-description">Os dons do Espírito Santo e seu uso</div>
+                                <div class="class-meta">
+                                    <span class="bible-refs"><i class="fas fa-bible"></i> 18 referências</span>
+                                    <span class="duration"><i class="far fa-clock"></i> 45 min</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Lição 15 -->
+                        <div class="class-item" data-class="class3">
+                            <div class="class-badge">15</div>
+                            <div class="class-content">
+                                <div class="class-header">
+                                    <div class="class-title" data-lesson="15">A Volta de Cristo</div>
+                                    <span class="lesson-status" data-lesson="15"></span>
+                                </div>
+                                <div class="class-description">As profecias sobre a segunda vinda de Jesus</div>
+                                <div class="class-meta">
+                                    <span class="bible-refs"><i class="fas fa-bible"></i> 20 referências</span>
+                                    <span class="duration"><i class="far fa-clock"></i> 50 min</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Classe IV -->
+                <div class="class-category" id="class4-section">
+                    <div class="category-header">
+                        <h3>Classe IV - Vida na Igreja</h3>
+                        <span class="lesson-count">5 Lições</span>
+                    </div>
+                    <div class="class-items">
+                        <!-- Lição 16 -->
+                        <div class="class-item" data-class="class4">
+                            <div class="class-badge">16</div>
+                            <div class="class-content">
+                                <div class="class-header">
+                                    <div class="class-title" data-lesson="16">Mordomia Cristã</div>
+                                    <span class="lesson-status" data-lesson="16"></span>
+                                </div>
+                                <div class="class-description">Administração dos recursos para a glória de Deus</div>
+                                <div class="class-meta">
+                                    <span class="bible-refs"><i class="fas fa-bible"></i> 12 referências</span>
+                                    <span class="duration"><i class="far fa-clock"></i> 35 min</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Lição 17 -->
+                        <div class="class-item" data-class="class4">
+                            <div class="class-badge">17</div>
+                            <div class="class-content">
+                                <div class="class-header">
+                                    <div class="class-title" data-lesson="17">Evangelismo e Missões</div>
+                                    <span class="lesson-status" data-lesson="17"></span>
+                                </div>
+                                <div class="class-description">A grande comissão e nosso papel nela</div>
+                                <div class="class-meta">
+                                    <span class="bible-refs"><i class="fas fa-bible"></i> 15 referências</span>
+                                    <span class="duration"><i class="far fa-clock"></i> 40 min</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Lição 18 -->
+                        <div class="class-item" data-class="class4">
+                            <div class="class-badge">18</div>
+                            <div class="class-content">
+                                <div class="class-header">
+                                    <div class="class-title" data-lesson="18">Família Cristã</div>
+                                    <span class="lesson-status" data-lesson="18"></span>
+                                </div>
+                                <div class="class-description">Princípios bíblicos para a família</div>
+                                <div class="class-meta">
+                                    <span class="bible-refs"><i class="fas fa-bible"></i> 18 referências</span>
+                                    <span class="duration"><i class="far fa-clock"></i> 45 min</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Lição 19 -->
+                        <div class="class-item" data-class="class4">
+                            <div class="class-badge">19</div>
+                            <div class="class-content">
+                                <div class="class-header">
+                                    <div class="class-title" data-lesson="19">Liderança Cristã</div>
+                                    <span class="lesson-status" data-lesson="19"></span>
+                                </div>
+                                <div class="class-description">Princípios de liderança segundo a Bíblia</div>
+                                <div class="class-meta">
+                                    <span class="bible-refs"><i class="fas fa-bible"></i> 14 referências</span>
+                                    <span class="duration"><i class="far fa-clock"></i> 40 min</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Lição 20 -->
+                        <div class="class-item" data-class="class4">
+                            <div class="class-badge">20</div>
+                            <div class="class-content">
+                                <div class="class-header">
+                                    <div class="class-title" data-lesson="20">Compromisso com Deus</div>
+                                    <span class="lesson-status" data-lesson="20"></span>
+                                </div>
+                                <div class="class-description">Vida de dedicação e serviço ao Senhor</div>
+                                <div class="class-meta">
+                                    <span class="bible-refs"><i class="fas fa-bible"></i> 16 referências</span>
+                                    <span class="duration"><i class="far fa-clock"></i> 45 min</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>Igreja Evangélica Assembleia de Deus da Baixa - Congregação de Ndiavela</p>
+        <p>Apostila de Estudo para Batismo de Novos Convertidos - Ndlavela 2016</p>
+        <div class="footer-links">
+            <a href="#" onclick="showHelp()">Ajuda</a> |
+            <a href="#" onclick="showAbout()">Sobre</a>
+        </div>
+    </footer>
+
+    <script>
+        // Sistema de Progresso com localStorage
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeMenu();
+            initializeFilters();
+            initializeProgress();
+            initializeLessons();
+        });
+
+        // Menu Hamburger
+        function initializeMenu() {
+            const hamburgerIcon = document.querySelector('.hamburger-icon');
+            const sidebarNav = document.querySelector('.sidebar-nav');
+            const closeSidebar = document.querySelector('.close-sidebar');
+            
+            hamburgerIcon.addEventListener('click', function() {
+                this.classList.toggle('active');
+                sidebarNav.classList.toggle('active');
+            });
+            
+            closeSidebar.addEventListener('click', function() {
+                hamburgerIcon.classList.remove('active');
+                sidebarNav.classList.remove('active');
+            });
+            
+            // Fechar menu ao clicar em um link
+            document.querySelectorAll('.sidebar-menu a').forEach(link => {
+                link.addEventListener('click', function() {
+                    hamburgerIcon.classList.remove('active');
+                    sidebarNav.classList.remove('active');
+                    
+                    // Se for um link de navegação para classe
+                    if (this.getAttribute('href').startsWith('#')) {
+                        const targetClass = this.getAttribute('href').substring(1);
+                        filterLessons(targetClass);
+                        
+                        // Atualizar botões de filtro
+                        document.querySelectorAll('.filter-btn').forEach(btn => {
+                            btn.classList.remove('active');
+                            if (btn.dataset.filter === targetClass) {
+                                btn.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            });
+            
+            // Botão para voltar à página inicial
+            document.querySelector('.nav-home').addEventListener('click', function(e) {
+                e.preventDefault();
+                document.getElementById('lesson-content').classList.remove('active');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        }
+
+        // Filtros de classe
+        function initializeFilters() {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // Remover classe active de todos os botões
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    // Adicionar classe active ao botão clicado
+                    this.classList.add('active');
+                    
+                    const filter = this.dataset.filter;
+                    filterLessons(filter);
+                });
+            });
+        }
+        
+        function filterLessons(filter) {
+            const classCategories = document.querySelectorAll('.class-category');
+            
+            classCategories.forEach(category => {
+                if (filter === 'all' || category.id === `${filter}-section`) {
+                    category.style.display = 'block';
+                } else {
+                    category.style.display = 'none';
+                }
+            });
+        }
+
+        // Sistema de Progresso
+        function initializeProgress() {
+            updateProgressBar();
+            
+            // Configurar clique nos status das lições
+            document.querySelectorAll('.lesson-status').forEach(status => {
+                status.addEventListener('click', function() {
+                    const lessonNum = this.dataset.lesson;
+                    toggleLessonStatus(lessonNum);
+                });
+            });
+            
+            // Botão para reiniciar progresso
+            document.getElementById('reset-progress').addEventListener('click', function() {
+                if (confirm('Tem certeza que deseja reiniciar todo o seu progresso? Esta ação não pode ser desfeita.')) {
+                    localStorage.removeItem('startedLessons');
+                    localStorage.removeItem('completedLessons');
+                    updateProgressBar();
+                    alert('Progresso reiniciado com sucesso!');
+                }
+            });
+        }
+
+        function updateProgressBar() {
+            const completedLessons = getCompletedLessons();
+            const totalLessons = 20;
+            const progress = (completedLessons.length / totalLessons) * 100;
+            
+            const progressFill = document.getElementById('progressFill');
+            const progressText = document.getElementById('progressText');
+            const completedLessonsSpan = document.getElementById('completedLessons');
+            const totalLessonsSpan = document.getElementById('totalLessons');
+            
+            progressFill.style.width = `${progress}%`;
+            progressText.textContent = `${Math.round(progress)}%`;
+            completedLessonsSpan.textContent = completedLessons.length;
+            totalLessonsSpan.textContent = totalLessons;
+            
+            // Atualizar status visual das lições
+            document.querySelectorAll('.lesson-status').forEach(status => {
+                const lessonNum = status.dataset.lesson;
+                if (completedLessons.includes(lessonNum)) {
+                    status.classList.add('completed');
+                    status.classList.remove('started');
+                } else if (getStartedLessons().includes(lessonNum)) {
+                    status.classList.add('started');
+                    status.classList.remove('completed');
+                } else {
+                    status.classList.remove('started', 'completed');
+                }
+            });
+        }
+
+        function getCompletedLessons() {
+            return JSON.parse(localStorage.getItem('completedLessons') || '[]');
+        }
+
+        function getStartedLessons() {
+            return JSON.parse(localStorage.getItem('startedLessons') || '[]');
+        }
+
+        function toggleLessonStatus(lessonNum) {
+            const completedLessons = getCompletedLessons();
+            const startedLessons = getStartedLessons();
+            
+            if (completedLessons.includes(lessonNum)) {
+                // Se já está completada, marcar como não iniciada
+                const completedIndex = completedLessons.indexOf(lessonNum);
+                completedLessons.splice(completedIndex, 1);
+                
+                const startedIndex = startedLessons.indexOf(lessonNum);
+                if (startedIndex >= 0) startedLessons.splice(startedIndex, 1);
+                
+                localStorage.setItem('completedLessons', JSON.stringify(completedLessons));
+                localStorage.setItem('startedLessons', JSON.stringify(startedLessons));
+            } else if (startedLessons.includes(lessonNum)) {
+                // Se está em andamento, marcar como completada
+                completedLessons.push(lessonNum);
+                localStorage.setItem('completedLessons', JSON.stringify(completedLessons));
+            } else {
+                // Se não iniciada, marcar como em andamento
+                startedLessons.push(lessonNum);
+                localStorage.setItem('startedLessons', JSON.stringify(startedLessons));
+            }
+            
+            updateProgressBar();
+        }
+
+        // Sistema de Lições
+        function initializeLessons() {
+            // Configurar clique nos títulos das lições
+            document.querySelectorAll('.class-title').forEach(title => {
+                title.addEventListener('click', function() {
+                    const lessonNum = this.dataset.lesson;
+                    loadLesson(lessonNum);
+                });
+            });
+        }
+
+        function loadLesson(lessonNum) {
+            const lessonContent = document.getElementById('lesson-content');
+            const lessonData = getLessonData(lessonNum);
+            
+            lessonContent.innerHTML = `
+                <div class="lesson-header">
+                    <h2>Lição ${lessonNum}: ${lessonData.title}</h2>
+                    <div class="lesson-meta">
+                        <span class="bible-refs"><i class="fas fa-bible"></i> ${lessonData.references}</span>
+                        <span class="duration"><i class="far fa-clock"></i> ${lessonData.duration}</span>
+                    </div>
+                </div>
+                <div class="lesson-body">
+                    ${lessonData.content}
+                </div>
+                <div class="lesson-actions">
+                    <button class="btn btn-secondary" onclick="closeLesson()">
+                        <i class="fas fa-arrow-left"></i> Voltar para Lições
+                    </button>
+                    <button class="btn btn-primary" onclick="markLessonCompleted(${lessonNum})">
+                        <i class="fas fa-check"></i> Marcar como Concluída
+                    </button>
+                </div>
+            `;
+            
+            lessonContent.classList.add('active');
+            lessonContent.scrollIntoView({ behavior: 'smooth' });
+            
+            // Marcar como iniciada se ainda não estiver
+            const startedLessons = getStartedLessons();
+            if (!startedLessons.includes(lessonNum)) {
+                startedLessons.push(lessonNum);
+                localStorage.setItem('startedLessons', JSON.stringify(startedLessons));
+                updateProgressBar();
+            }
+        }
+
+        function closeLesson() {
+            document.getElementById('lesson-content').classList.remove('active');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function markLessonCompleted(lessonNum) {
+            const completedLessons = getCompletedLessons();
+            if (!completedLessons.includes(lessonNum.toString())) {
+                completedLessons.push(lessonNum.toString());
+                localStorage.setItem('completedLessons', JSON.stringify(completedLessons));
+                updateProgressBar();
+                alert('Lição marcada como concluída!');
+                closeLesson();
+            } else {
+                alert('Esta lição já estava marcada como concluída.');
+            }
+        }
+
+        // Dados das lições (conteúdo simplificado)
+        function getLessonData(lessonNum) {
+            const lessons = {
+                1: {
+                    title: "Salvação e o Senhorio de Cristo",
+                    references: "João 3:16; Romanos 3:23; Efésios 2:8-9",
+                    duration: "30 minutos",
+                    content: `
+                        <div class="lesson-section">
+                            <h3>Introdução</h3>
+                            <p>A salvação é o tema central do Evangelho. É através dela que recebemos o perdão dos pecados e a vida eterna.</p>
+                        </div>
+                        <div class="lesson-section">
+                            <h3>A Necessidade da Salvação</h3>
+                            <p>Todos pecaram e estão destituídos da glória de Deus (Romanos 3:23). O pecado nos separa de Deus e nos leva à morte espiritual.</p>
+                            <div class="bible-verse">
+                                "Porque o salário do pecado é a morte, mas o dom gratuito de Deus é a vida eterna em Cristo Jesus, nosso Senhor." - Romanos 6:23
+                            </div>
+                        </div>
+                        <div class="lesson-section">
+                            <h3>O Caminho da Salvação</h3>
+                            <p>Jesus Cristo é o único caminho para a salvação. Ele morreu na cruz para pagar o preço dos nossos pecados.</p>
+                            <div class="bible-verse">
+                                "Respondeu Jesus: 'Eu sou o caminho, a verdade e a vida. Ninguém vem ao Pai, a não ser por mim.'" - João 14:6
+                            </div>
+                        </div>
+                    `
+                },
+                2: {
+                    title: "A Bíblia",
+                    references: "2 Timóteo 3:16-17; Salmo 119:105",
+                    duration: "25 minutos",
+                    content: `
+                        <div class="lesson-section">
+                            <h3>O que é a Bíblia?</h3>
+                            <p>A Bíblia é a Palavra de Deus, inspirada pelo Espírito Santo e escrita por homens escolhidos por Deus.</p>
+                        </div>
+                        <div class="lesson-section">
+                            <h3>Divisão da Bíblia</h3>
+                            <p>A Bíblia está dividida em Antigo Testamento (39 livros) e Novo Testamento (27 livros), totalizando 66 livros.</p>
+                        </div>
+                        <div class="lesson-section">
+                            <h3>A Importância da Bíblia</h3>
+                            <p>A Bíblia é nossa regra de fé e prática. Ela nos guia, corrige e instrui em toda a verdade.</p>
+                            <div class="bible-verse">
+                                "Toda a Escritura é inspirada por Deus e útil para o ensino, para a repreensão, para a correção e para a instrução na justiça" - 2 Timóteo 3:16
+                            </div>
+                        </div>
+                    `
+                },
+                // Adicione mais lições conforme necessário...
+            };
+            
+            // Retorna dados da lição ou uma mensagem padrão se a lição não existir
+            return lessons[lessonNum] || {
+                title: "Lição em Desenvolvimento",
+                references: "Aguardando conteúdo",
+                duration: "Em breve",
+                content: `<p>O conteúdo desta lição está sendo preparado e estará disponível em breve.</p>`
+            };
+        }
+
+        // Funções do Footer
+        function showHelp() {
+            alert('Para ajuda, entre em contato com seu monitor ou líder espiritual.');
+        }
+
+        function showAbout() {
+            alert('Apostila de Estudo para Batismo de Novos Convertidos - Desenvolvida pela Igreja Evangélica Assembleia de Deus da Baixa - Congregação de Ndlavela, Moçambique. Ano 2016.');
+        }
+
+        // Função para imprimir todas as lições
+        document.getElementById('print-all').addEventListener('click', function() {
+            alert('Esta funcionalidade imprimirá todas as lições. Certifique-se de que sua impressora está configurada.');
+            window.print();
+        });
+    </script>
+</body>
+</html>
